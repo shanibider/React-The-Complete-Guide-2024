@@ -327,32 +327,35 @@ if (password === "Hello"){
 
 
 
-
-### ◻
+### ◻ Functions as values
 ```javascript
+function handleTimeout(){
+  console.log("Timed out");
+}
+
+function handleTimeout2 = () => {
+  console.log("Timed out");
+}
+
+setTimeout(handleTimeout,2000);  // setTimeout is default js function
+setTimeout(handleTimeout2,3000);
+setTimeout( () =>{
+  console.log("Timed out");
+}, 4000);
 
 
+
+
+function init() {
+  function greet() {
+    console.log(“Hi!“);
+  }
+
+  greet();
+}
+
+init();
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
