@@ -1,3 +1,6 @@
+/* Here i move all Header component related css from the main css. 
+And move Header files to it's own folder. */
+
 header {
   text-align: center;
   margin: 3rem 0;

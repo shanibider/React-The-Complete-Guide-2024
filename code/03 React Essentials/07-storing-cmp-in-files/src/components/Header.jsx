@@ -6,6 +6,7 @@ function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
+// Adding export default in order to import this component in App.jsx
 export default function Header() {
   const description = reactDescriptions[genRandomInt(2)];
 

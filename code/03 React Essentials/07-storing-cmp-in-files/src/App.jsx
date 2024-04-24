@@ -2,6 +2,7 @@ import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 
+// Here i move all the components to their own folder, and import them here 
 function App() {
   return (
     <div>
