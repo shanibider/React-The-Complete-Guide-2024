@@ -1,182 +1,13 @@
 # React - The Complete Guide 2024 (incl. React Router & Redux) 🚀
-Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> This 68 hours Udemy course has equipped me with comprehensive knowledge and practical experience in React development. 🧾
+Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> This 68 hours Udemy course has equipped me with comprehensive knowledge and practical experience in React development, including components, props, React-hooks, forms, Redux, Routing, states + responses, Next.js. 🧾
 
 <div align=center>
   <img height="350px" src="https://github.com/shanibider/React---The-Complete-Guide-2024/assets/72359805/3d5c195b-4177-4da2-ae13-5234de5ed3cd">
 </div> <br>
 
-# 🏆 Course Overview -
+### 🏆 Course Overview -
 
-
-
-## ◻ Section 2: JavaScript Refresher:
-### ◻ Codesandbox Coding Exercise:
-#### [👉🏻 First React App](https://codesandbox.io/p/sandbox/first-react-app-zj5cx1?file=%2Fsrc%2FApp.js)
-
-![2](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/61e6dca9-117e-4f99-8772-48739fde954f)
-
-```javascript
-import { useState } from "react";
-import "./styles.css";
-
-const content = [
-  [
-    "React is extremely popular",
-    "It makes building complex, interactive UIs a breeze",
-    "It's powerful & flexible",
-    "It has a very active and versatile ecosystem"
-  ],
-  [
-    "Components, JSX & Props",
-    "State",
-    "Hooks (e.g., useEffect())",
-    "Dynamic rendering"
-  ],
-  [
-    "Official web page (react.dev)",
-    "Next.js (Fullstack framework)",
-    "React Native (build native mobile apps with React)"
-  ],
-  [
-    "Vanilla JavaScript requires imperative programming",
-    "Imperative Programming: You define all the steps needed to achieve a result",
-    "React on the other hand embraces declarative programming",
-    "With React, you define the goal and React figures out how to get there"
-  ]
-];
-
-export default function App() {
-  const [activeContentIndex, setActiveContentIndex] = useState(0);
-
-  return (
-    <div>
-      <header>
-        <img src="react-logo-xs.png" alt="React logo" />
-        <div>
-          <h1>React.js</h1>
-          <p>i.e., using the React library for rendering the UI</p>
-        </div>
-      </header>
-
-      <div id="tabs">
-        <menu>
-          <button
-            className={activeContentIndex === 0 ? "active" : ""}
-            onClick={() => setActiveContentIndex(0)}
-          >
-            Why React?
-          </button>
-          <button
-            className={activeContentIndex === 1 ? "active" : ""}
-            onClick={() => setActiveContentIndex(1)}
-          >
-            Core Features
-          </button>
-          <button
-            className={activeContentIndex === 2 ? "active" : ""}
-            onClick={() => setActiveContentIndex(2)}
-          >
-            Related Resources
-          </button>
-          <button
-            className={activeContentIndex === 3 ? "active" : ""}
-            onClick={() => setActiveContentIndex(3)}
-          >
-            React vs JS
-          </button>
-        </menu>
-        <div id="tab-content">
-          <ul>
-            {content[activeContentIndex].map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}
-```
-
-```css
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: #181c1f;
-  color: #bdd1d4;
-  margin: 2rem;
-}
-
-header {
-  margin: 2rem 0;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-header img {
-  width: 3rem;
-  object-fit: contain;
-}
-
-header h1 {
-  margin: 0;
-  color: #48d9f3;
-}
-
-header p {
-  margin: 0;
-  color: #82c2ce;
-}
-
-#tabs {
-  max-width: 32rem;
-  margin: 2rem 0;
-  overflow: hidden;
-}
-
-#tabs menu {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 0.25rem;
-}
-
-#tabs button {
-  font: inherit;
-  font-size: 0.85rem;
-  background-color: #282f33;
-  border: none;
-  border-bottom-color: #48d9f3;
-  color: #e0eff1;
-  border-radius: 4px 4px 0 0;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-}
-
-#tabs button:hover,
-#tabs button.active {
-  background-color: #48d9f3;
-  color: #273133;
-}
-
-#tab-content {
-  background-color: #2d3942;
-  border-radius: 0 4px 4px 4px;
-  padding: 1rem;
-}
-
-#tab-content li {
-  margin: 0.75rem 0;
-}
-```
-
-
-
+# ◻ Section 2: JavaScript Refresher:
 ### ◻ Arrow Function: 
 ```javascript
 default function (){
@@ -240,7 +71,6 @@ user1.greet();
 ```
 
 
-
 ### ◻ Arrays:
 ```javascript
 const hobbies = ["sport", "cooking", "reading"];
@@ -265,7 +95,6 @@ function transformToObjects(numberArray) {
     return newArray;
 }
 // For example, for the provided input [1, 2, 3] the function should return [{val: 1}, {val: 2}, {val: 3}].
-
 
 
 // Destructing
@@ -326,7 +155,6 @@ if (password === "Hello"){
 
 
 
-
 ### ◻ Functions as values
 ```javascript
 function handleTimeout(){
@@ -353,7 +181,6 @@ function init() {
 
   greet();
 }
-
 init();
 
 
@@ -361,7 +188,6 @@ const hobbies = ["Sports", "Cooking"];
 hobbies = [];
 hobbies.push("Working");
 console.log(hobbies);
-
 
 
 // let
@@ -373,7 +199,6 @@ if (x === 1) {
   console.log(x);  // Expected output: 2
 }
 console.log(x);// Expected output: 1
-
 
 
 // const
@@ -429,7 +254,6 @@ const returnMe = name => name
 const returnMe = name => { 
     return name;
 }
-
 
 
 // Exports & Imports
@@ -595,8 +419,6 @@ printName({name: 'Max', age: 28}); // prints 'Max')
 ```
 
 
-
-
 #### JS Array Functions
 ```javascript
 Particularly important in this course are:
@@ -609,7 +431,389 @@ reduce()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
 slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-      
+```
+
+<br>
+
+---
+<br>
+
+
+
+
+# ◻ Section 3: React Essentials - Components, JSX, Props, State & more:
+
+###  ◻ Coding Exercise - Building & Using a Component
+```javascript
+// create a new MainGoal component which outputs a paragraph of text that describes your main course goal,
+// and then use it inside the App component's JSX code.
+import React from 'react';
+// DEFINE YOUR COMPONENT HERE
+export function MainGoal() {
+    <p>My main goal: Become React expert</p>;
+}
+
+function App() {
+  return (
+    <div id="app">
+      <h1>Time to Practice!</h1>
+      <p>
+        Build a <code>&lt;MainGoal&gt;</code> component and insert it below this
+        text.
+      </p>
+      <p>
+        Your <code>&lt;MainGoal&gt;</code> component should simply output some
+        text that describes your main course goal (e.g., &quot;My main goal:
+        Learn React in great detail&quot;).
+      </p>
+      <p>
+        <strong>Important:</strong> You custom component must contain the text
+        &quot;My main goal:&quot;
+      </p>
+      <p>
+        <strong>Also important:</strong> For the automatic checks to succeed,
+        you <strong>must export</strong> your custom component function! Not as
+        a default but simply by adding the <code>export</code> keyword in front
+        of your function (e.g., <code>export function YOUR_COMPONENT_NAME</code>
+        ).
+      </p>
+      {/* OUTPUT YOUR COMPONENT HERE */}     
+      <MainGoal />
+    </div>
+  );
+}
+export default App;
+```
+
+
+
+
+## ✔ React Essentials:
+I build over the base project with each module learned.
+
+```javascript
+// starting project
+function App() {
+  return (
+    <div>
+      <header>
+        <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+        <h1>React Essentials</h1>
+        <p>
+          Fundamental React concepts you will need for almost any app you are
+          going to build!
+        </p>
+      </header>
+      <main>
+        <h2>Time to get started!</h2>
+      </main>
+    </div>
+  );
+}
+export default App;
+```
+
+###  ◻ Making Components Reusable with Props -
+```javascript
+/* 2. Merge into Object.
+React merges all props into a single object.
+{
+   title= 'Components'
+   description= 'The core UI...'
+}
+*/
+
+// 3. Receive Props as an argument.
+// Props are passed to the component function as the first argument by React.
+// This object has this custom <key, value> pairs: { title: '...', description: '...', image: '...' }
+function CoreConcept(props) {
+  return (
+    <li>
+      {/* Can access props.image to get hold of the value that's set on the image key below */}
+      <img src={props.image} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      {/* Rendering the Header component (can be reused) */}
+      <Header />
+      <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+          {/* 1. Set props (can be: String, Number, Object, Array).
+          Props are passed as an object, and are "custom HTML attributes" set on component. */}
+            <CoreConcept
+              title="Components"
+              description="The core UI building block."
+              image={componentsImg}
+            />
+            <CoreConcept title="Props" />
+            <CoreConcept />
+            <CoreConcept />
+          </ul>
+        </section>
+      </main>
+    </div>
+  );
+}
+export default App;
+```
+
+
+### ◻ Alternative Props Syntax:
+```javascript
+import { CORE_CONCEPTS } from './data.js';
+
+// Using another js feature: object destructuring. By adding '{}', we can destructure the first parameter of this function.
+// I can target the different properties of the incoming object by name (same properties as i set below)
+function CoreConcept({ image, title, description }) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            {/* Setting the props */}
+            <CoreConcept
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
+            />
+            {/* Shortcut to pull out all the 'key,value' pairs of an object  */}
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
+          </ul>
+        </section>
+      </main>
+    </div>
+  );
+}
+export default App;
+
+// data.js:
+export const CORE_CONCEPTS = [
+  {
+    image: componentsImg,
+    title: 'Components',
+    description:
+      'The core UI building block - compose the user interface by combining multiple components.',
+  },
+...];
+```
+
+
+##  ◻ Coding Exercise - Working with props
+```javascript
+export function CourseGoal(props) {
+  return (
+    <li>
+      <h2>{props.title}</h2>
+      <p>{props.description}</p>
+    </li>
+  );
+}
+
+function App() {
+  return (
+    <div id="app" data-testid="app">
+      <h1>Time to Practice</h1>
+      <p>One course, many goals! 🎯</p>
+      <ul>
+        {/* OUTPUT AT LEAST TWO CourseGoal components here */}
+        {/* One of them should have a title of “Learn React” and a description of “In-depth” */}
+      <CourseGoal
+      title="Learn React"
+      description="In-depth"
+      />
+      <CourseGoal
+      title="Practice React"
+      description="Practice working with react"
+      />
+      </ul>
+    </div>
+  );
+}
+export default App;
+```
+
+
+##  ◻ Quiz - Dynamic values and Props
+- Which values can be output as dynamic values in JSX (i.e., between curly braces)?
+    - You could output expressions like "1 + 1", variables / constants that hold values, the result of calling a function etc.
+
+- How should you typically load / use images in React projects?
+    - By "importing" the image, a production-safe path gets generated under the hood.
+
+- How can you assign a dynamic value to an HTML element attribute?
+    - You simply replace the text value you would normally set for attributes with the dynamic (curly-brace-wrapped) value.
+
+- Which core React concept can increase the reusability of React components?
+    - Props are essentially custom attributes that can be set on components.
+
+- How do "props" work in React?
+    - React automatically passes a props object as the first argument to the receiving component
+
+- Which of the following four code examples for setting & extracting props would NOT work as intended?
+I.e., which example will NOT output the text "Priority: 5" on the screen.
+
+```javascript
+<MyComponent priority={5} />
+function MyComponent(priority) {
+  return <p>Priority: {priority} </p>
+```
+
+    - The error is subtle but this example does NOT use object destructuring. So here, the "priority" prop is not pulled out of the props object. Instead, it's now the entire props object that's named "priority". This wouldn't be a problem since the name is up to you. But it's now the entire object that's output in the paragraph, not the "priority" property. Therefore, the output would not be "Priority: 5" but instead "Priority: [Object object]" (or something like that).
+This will be correct answers:
+```javascript
+<MyComponent priority={5} />
+function MyComponent({...props}) {
+  return <p>Priority: {priority} </p>
+
+<MyComponent priority={5} />
+function MyComponent(props) {
+  return <p>Priority: {priority} </p>
+
+<MyComponent priority={5} />
+function MyComponent({priority}) {
+  return <p>Priority: {priority} </p>
+```
+
+
+### ◻ More props Syntax:
+```javascript
+import { CORE_CONCEPTS } from './data.js';
+import Header from './components/Header.jsx';
+import CoreConcept from './components/CoreConcept.jsx';
+
+// Here I move all the components to their folder, and import them here 
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcept
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
+            />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
+          </ul>
+        </section>
+      </main>
+    </div>
+  );
+}
+export default App;
+```
+
+
+```javascript
+// components/ CoreConcept
+export default function CoreConcept({ image, title, description }) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
+```
+
+
+```javascript
+// components/ Header
+import reactImg from '../assets/react-core-concepts.png';
+
+const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
+
+function genRandomInt(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
+export default function Header() {
+  const description = reactDescriptions[genRandomInt(2)];
+
+  return (
+    <header>
+      <img src={reactImg} alt="Stylized atom" />
+      <h1>React Essentials</h1>
+      <p>
+        {description} React concepts you will need for almost any app you are
+        going to build!
+      </p>
+    </header>
+  );
+}
+```
+
+
+
+
+
+### ◻ The special "children" prop 
+```javascript
+// children prop is used to pass the content to the component.
+// This is a prop that set by react.
+// This children prop is refer to the content between the opening and closing tags of the component.
+// i can output that content by using {children} or {props.children} in the component.
+// (i.e. <TabButton>Content</TabButton>)
+export default function TabButton({ children }) { // here i use object destructuring to get the children properity
+  return (
+    <li>
+      <button>{children}</button>
+    </li>
+  );
+}
+// same as:
+export default function TabButton(props) {
+  return (
+    <li>
+      <button>{props.children}</button>
+    </li>
+  );
+}
+
+
+// "Children" Props vs "Attribute Props"
+// Using Attribute:
+// for smaller pieces of information
+<TabButton label="Components"></TabButton>
+
+function TabButton({ label }) { 
+  return <button>{label}</button>;
+}
+
+// Using Children:
+// for a single piece of renderable content
+<TabButton>Components</TabButton>
+
+function TabButton({ children }) { 
+  return <button>{children}</button>;
+}
 ```
 
 
@@ -617,6 +821,95 @@ splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 
 
+##  ◻ Coding Exercise - Component Composition
+Create a reusable Card component that takes a name prop as an input and, in addition, can be wrapped around any JSX code:
+```javascript
+import Card from './Card';
+
+function App() {
+  return (
+    <div id="app">
+      <h1>Available Experts</h1>
+      <Card name="Anthony Blake">
+        <p>
+          Blake is a professor of Computer Science at the University of
+          Illinois.
+        </p>
+        <p>
+          <a href="mailto:blake@example.com">Email Anthony</a>
+        </p>
+      </Card>
+
+      <Card name="Maria Miles">
+        <p>
+          Maria is a professor of Computer Science at the University of
+          Illinois.
+        </p>
+        <p>
+          <a href="mailto:blake@example.com">Email Maria</a>
+        </p>
+      </Card>
+    </div>
+  );
+}
+export default App;
+
+// card.js
+/* The children prop is a special prop that's automatically provided to every component function. It contains the wrapped content as a value.
+    So the children prop's value for this code:
+    <Card>
+      <p>Hi there</p>
+    </Card>
+    would be <p>Hi there</p>.
+*/
+
+export default function Card({ name, children }) {
+    return (
+        <article className="card">
+        <h2>{name}</h2>
+        {children}
+        </article>
+    );
+}
+
+
+// index.css
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#dfdee0, #c3c3c4);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+.card {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 30rem;
+  border-radius: 6px;
+  background: linear-gradient(#254041, #203031);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+.card h2 {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e5d9f1;
+}
+.card p {
+  margin: 0.5rem 0;
+}
+.card a {
+  color: #b3f4f6;
+  text-decoration: none;
+}
+```      
 
 
 
@@ -649,6 +942,213 @@ splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+---
+<br>
+
+
+### ◻ Codesandbox Coding Exercise:
+#### [👉🏻 First React App](https://codesandbox.io/p/sandbox/first-react-app-zj5cx1?file=%2Fsrc%2FApp.js)
+
+![2](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/61e6dca9-117e-4f99-8772-48739fde954f)
+
+```javascript
+import { useState } from "react";
+import "./styles.css";
+
+const content = [
+  [
+    "React is extremely popular",
+    "It makes building complex, interactive UIs a breeze",
+    "It's powerful & flexible",
+    "It has a very active and versatile ecosystem"
+  ],
+  [
+    "Components, JSX & Props",
+    "State",
+    "Hooks (e.g., useEffect())",
+    "Dynamic rendering"
+  ],
+  [
+    "Official web page (react.dev)",
+    "Next.js (Fullstack framework)",
+    "React Native (build native mobile apps with React)"
+  ],
+  [
+    "Vanilla JavaScript requires imperative programming",
+    "Imperative Programming: You define all the steps needed to achieve a result",
+    "React on the other hand embraces declarative programming",
+    "With React, you define the goal and React figures out how to get there"
+  ]
+];
+
+export default function App() {
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
+
+  return (
+    <div>
+      <header>
+        <img src="react-logo-xs.png" alt="React logo" />
+        <div>
+          <h1>React.js</h1>
+          <p>i.e., using the React library for rendering the UI</p>
+        </div>
+      </header>
+
+      <div id="tabs">
+        <menu>
+          <button
+            className={activeContentIndex === 0 ? "active" : ""}
+            onClick={() => setActiveContentIndex(0)}
+          >
+            Why React?
+          </button>
+          <button
+            className={activeContentIndex === 1 ? "active" : ""}
+            onClick={() => setActiveContentIndex(1)}
+          >
+            Core Features
+          </button>
+          <button
+            className={activeContentIndex === 2 ? "active" : ""}
+            onClick={() => setActiveContentIndex(2)}
+          >
+            Related Resources
+          </button>
+          <button
+            className={activeContentIndex === 3 ? "active" : ""}
+            onClick={() => setActiveContentIndex(3)}
+          >
+            React vs JS
+          </button>
+        </menu>
+        <div id="tab-content">
+          <ul>
+            {content[activeContentIndex].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #181c1f;
+  color: #bdd1d4;
+  margin: 2rem;
+}
+
+header {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+header img {
+  width: 3rem;
+  object-fit: contain;
+}
+
+header h1 {
+  margin: 0;
+  color: #48d9f3;
+}
+
+header p {
+  margin: 0;
+  color: #82c2ce;
+}
+
+#tabs {
+  max-width: 32rem;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+#tabs menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.25rem;
+}
+
+#tabs button {
+  font: inherit;
+  font-size: 0.85rem;
+  background-color: #282f33;
+  border: none;
+  border-bottom-color: #48d9f3;
+  color: #e0eff1;
+  border-radius: 4px 4px 0 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+#tabs button:hover,
+#tabs button.active {
+  background-color: #48d9f3;
+  color: #273133;
+}
+
+#tab-content {
+  background-color: #2d3942;
+  border-radius: 0 4px 4px 4px;
+  padding: 1rem;
+}
+
+#tab-content li {
+  margin: 0.75rem 0;
+}
+```
 
 <br>
 
