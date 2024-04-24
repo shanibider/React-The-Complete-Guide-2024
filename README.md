@@ -443,7 +443,7 @@ splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
 
 # ◻ Section 3: React Essentials - Components, JSX, Props, State & more:
 
-###  ◻ Coding Exercise - Building & Using a Component
+###  ◻ Coding Exercise 3 - Building & Using a Component
 ```javascript
 // create a new MainGoal component which outputs a paragraph of text that describes your main course goal,
 // and then use it inside the App component's JSX code.
@@ -566,6 +566,51 @@ export default App;
 ```
 
 
+
+
+##  ◻ Coding Exercise 4 - Outputting Dynamic Content:
+```javascript
+// the user's first name, last name and title is output dynamically by using JSX' "curly brace" syntax.
+// For example, { userData.title } is replaced with the actual string value stored in userData.title
+// when the component is rendered to the screen.
+import React from 'react';
+
+export const userData = {
+  firstName: 'Shani', 
+  lastName: 'Bider', 
+  title: 'Developer',
+};
+
+// Edit the User component code to output the userData data
+export function User() {
+  return (
+    <div id="user" data-testid="user">
+      <h2>
+     {userData.firstName} {userData.lastName}
+      </h2>
+      <p>{userData.title}</p>
+    </div>
+  );
+}
+
+// DON'T edit the App component code
+function App() {
+  return (
+    <div id="app">
+      <h1>Time to Practice</h1>
+      <p>Welcome on board of this course! You got this 💪</p>
+      <User/>
+    </div>
+  );
+}
+export default App;
+```
+![5](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/887b4b01-ab98-4345-b08c-2e6911fdae32)
+
+
+
+
+
 ### ◻ Alternative Props Syntax:
 ```javascript
 import { CORE_CONCEPTS } from './data.js';
@@ -620,7 +665,7 @@ export const CORE_CONCEPTS = [
 ```
 
 
-##  ◻ Coding Exercise - Working with props
+##  ◻ Coding Exercise 5 - Working with props
 ```javascript
 export function CourseGoal(props) {
   return (
@@ -653,6 +698,8 @@ function App() {
 }
 export default App;
 ```
+![4](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/ce2da105-bdab-44de-ada9-9e2625101f3c)
+
 
 
 ##  ◻ Quiz - Dynamic values and Props
@@ -679,8 +726,9 @@ I.e., which example will NOT output the text "Priority: 5" on the screen.
 function MyComponent(priority) {
   return <p>Priority: {priority} </p>
 ```
+The error is subtle but this example does NOT use object destructuring. So here, the "priority" prop is not pulled out of the props object. Instead, it's now the entire props object that's named "priority". This wouldn't be a problem since the name is up to you. But it's now the entire object that's output in the paragraph, not the "priority" property. Therefore, the output would not be "Priority: 5" but instead "Priority: [Object object]" (or something like that).
 
-    - The error is subtle but this example does NOT use object destructuring. So here, the "priority" prop is not pulled out of the props object. Instead, it's now the entire props object that's named "priority". This wouldn't be a problem since the name is up to you. But it's now the entire object that's output in the paragraph, not the "priority" property. Therefore, the output would not be "Priority: 5" but instead "Priority: [Object object]" (or something like that).
+
 This will be correct answers:
 ```javascript
 <MyComponent priority={5} />
@@ -821,7 +869,7 @@ function TabButton({ children }) {
 
 
 
-##  ◻ Coding Exercise - Component Composition
+##  ◻ Coding Exercise 6 - Component Composition
 Create a reusable Card component that takes a name prop as an input and, in addition, can be wrapped around any JSX code:
 ```javascript
 import Card from './Card';
@@ -910,8 +958,7 @@ body {
   text-decoration: none;
 }
 ```      
-
-
+![3](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f0a3487f-bb42-4b31-b75c-cd27c8d5c871)
 
 
 
