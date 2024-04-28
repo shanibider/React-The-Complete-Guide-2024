@@ -486,10 +486,15 @@ export default App;
 ```
 
 
+<br>
 
+---
+<br>
 
-## ✔ React Essentials:
-I build over the base project with each module learned.
+## ✔ Starting Project:
+I build over the starting project with each module learned.
+![3 React essential](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/763a1d38-51bd-4cc5-afc1-1e86aa790778)
+
 
 ```javascript
 // starting project
@@ -512,6 +517,7 @@ function App() {
 }
 export default App;
 ```
+
 
 ###  ◻ Making Components Reusable with Props -
 ```javascript
@@ -592,7 +598,6 @@ export function User() {
     </div>
   );
 }
-
 // DON'T edit the App component code
 function App() {
   return (
@@ -959,6 +964,117 @@ body {
 }
 ```      
 ![3](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f0a3487f-bb42-4b31-b75c-cd27c8d5c871)
+
+
+
+
+###  ◻ Coding Exercise 7 - Racting to Event
+```javascript
+// Your goal is to change the email, password and loggedIn values when the button in the App component is pressed
+// Change them to any values of your choice (except loggedIn => that should be changed to true)
+// You DON'T need to fetch the values entered into the <input /> fields
+// You'll learn about that later in the course - for the moment, those fields are just there to look good :-)
+export const user = {
+  email: '',
+  password: '',
+  loggedIn: false,
+};
+
+function handleLogin(){
+   user.email = 'test@example.com';
+   user.password = 'test';
+   user.loggedIn = true;
+}
+
+// Please note: The login does not actually work!
+// This exercise is just about practicing event handling
+// You'll learn how to add user authentication to React apps later in the course!
+function App() {
+  return (
+    <div id="app">
+      <h1>User Login</h1>
+      <p>
+        <label>Email</label>
+        {/* You don't need to do anything with those inputs! You'll learn how to handle user input later */}
+        <input type="email" />
+      </p>
+
+      <p>
+        <label>Password</label>
+        {/* You don't need to do anything with those inputs! You'll learn how to handle user input later */}
+        <input type="password" />
+      </p>
+
+      <p id="actions">
+        <button onClick={handleLogin}>Login</button>
+      </p>
+    </div>
+  );
+}
+export default App;
+```
+
+![7](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/97349991-51de-4aad-bae6-681cb3a8cbc3)
+
+
+
+
+
+
+###  ◻ Coding Exercise 8 - Event Handlers
+```javascript
+export const user = {
+  name: '',
+};
+
+function App() {
+  // Your goal: This function should be called WITH A VALUE for name when the <button> is clicked
+  function handleCreateUser(name) {
+    user.name = name;
+  }
+
+  return (
+    <div id="app">
+      <h1>User Login</h1>
+      <p>
+        <label>Name</label>
+        {/* You don't need to do anything with this input! You'll learn how to handle user input later */}
+        <input type="text" />
+      </p>
+
+      <p id="actions">
+        <button onClick={ () => handleCreateUser('Shani') }>Create User</button>
+      </p>
+    </div>
+  );
+}
+export default App;
+```
+
+![8](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/6fc6c78b-b1fc-4869-a2e9-abadc6da9091)
+
+
+##  ◻ Quiz - Event Handling
+- How should you typically store your component functions?
+Split across multiple files. (One component per file).
+
+- What's the purpose of the special "children" prop?
+"children" will receive whichever content you pass between the opening and closing tags of your component.
+
+- How can you handle user events in React projects?
+Via the built-in 'onXYZ' props (e.g. onClick).
+
+- To execute code upon events, which value must be passed to event props like onClick?
+A pointer to the function that sould be executed (onClick={handleClick}).
+
+- How can you "configure" the execution of an event-dependent function (e.g., define which arguments get passed to it)?
+By wrapping the execution of your event handling function with another function, it's that other function that's passed as a value to the event-handling prop. Therefore, your main function (=> handleClick in this example) does NOT get executed too early but instead only when the event occurs. (onClick = { () => handleClick(5)}).
+
+
+
+
+
+
 
 
 
