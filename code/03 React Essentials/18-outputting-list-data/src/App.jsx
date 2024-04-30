@@ -37,15 +37,35 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+          {/* Dynamically generate a list:
+          Instead of hardcoding <CoreConcept> components, we map over CORE_CONCEPTS array,
+          and output this array dynamically. 
+          JSX can be used inside {} to output dynamic content. For example, {[<p>Hello</p>, <p>world</p>]}
+            <CoreConcept {...CORE_CONCEPTS[0]} />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
+          
           <ul>
+          {/* map recieve array 'item' and execute the callback function for 'every item'.
+          Instead of: <CoreConcept {...CORE_CONCEPTS[0]}/> 
+          we will use: <CoreConcept {...conceptItem} />
+         
+          {...conceptItem} will pass all properties of the object as props to the component.
+          So inside the component, we can access them as props.image, props.title, props.description.
+          Or we can destructure them in the component input ({image, title, description})
+
+          We also must use key prop to avoid warning (name must be unique) */}
             {CORE_CONCEPTS.map((conceptItem) => (
               <CoreConcept key={conceptItem.title} {...conceptItem} />
             ))}
           </ul>
+
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
+          {/* Everything between the openning and closing tags is 'children' */}
             <TabButton
               isSelected={selectedTopic === 'components'}
               onSelect={() => handleSelect('components')}

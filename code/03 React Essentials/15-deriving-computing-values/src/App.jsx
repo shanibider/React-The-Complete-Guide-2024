@@ -7,11 +7,15 @@ import TabButton from './components/TabButton.jsx';
 import { EXAMPLES } from './data.js';
 
 function App() {
+  // Creating a State to manage the selected topic for displaying the content based on the button pressed
+  // initally set to 'components'
   const [selectedTopic, setSelectedTopic] = useState('components');
 
+  // function to handle the button that was pressed
+  // inside we use the setSelectedTopic from useState to set the selectedTopic to the button that was pressed
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
-    setSelectedTopic(selectedButton);
+    setSelectedTopic(selectedButton); 
     // console.log(selectedTopic);
   }
 
@@ -36,6 +40,8 @@ function App() {
         </section>
         <section id="examples">
           <h2>Examples</h2>
+
+          {/* handle the button that was pressed */}
           <menu>
             <TabButton onSelect={() => handleSelect('components')}>
               Components
@@ -44,13 +50,17 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
+
+          {/* Outputing diffrent data based on the button was pressed, by State */}
           <div id="tab-content">
+            {/* Use dynamic content here, by dynamiclly access a property */}
             <h3>{EXAMPLES[selectedTopic].title}</h3>
             <p>{EXAMPLES[selectedTopic].description}</p>
             <pre>
               <code>{EXAMPLES[selectedTopic].code}</code>
             </pre>
           </div>
+
         </section>
       </main>
     </div>

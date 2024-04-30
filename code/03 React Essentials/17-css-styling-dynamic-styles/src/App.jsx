@@ -38,6 +38,8 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
+          {/* For next challenge i want to make <CoreConcept> dynamic, based on CORE_CONCEPTS array.
+          (if i change array's size i want the UI to change accordingly) */}
             <CoreConcept
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
@@ -51,6 +53,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
+             {/* isSelected is a new prop added for rge conditional styling */}
             <TabButton
               isSelected={selectedTopic === 'components'}
               onSelect={() => handleSelect('components')}

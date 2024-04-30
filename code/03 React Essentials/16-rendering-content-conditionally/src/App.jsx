@@ -7,6 +7,8 @@ import TabButton from './components/TabButton.jsx';
 import { EXAMPLES } from './data.js';
 
 function App() {
+  // now we don't want to set the initial value of selectedTopic to 'components'
+  // Initally selectedTopic is undefined
   const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
@@ -17,6 +19,10 @@ function App() {
 
   console.log('APP COMPONENT EXECUTING');
 
+  
+  // Conditional rendering.
+  // There are several approaches to conditionally rendering. (inside the return with ternary operator, if statement, && operator, or by using a variable)
+  // if selectedTopic is true, then we will display the content, nor otherwise
   let tabContent = <p>Please select a topic.</p>;
 
   if (selectedTopic) {
@@ -58,7 +64,33 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          {tabContent}
+
+          {/* // instead of this code, i will use {tabContent}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
+        */}
+
+          {tabContent}    {/* using tabContent variable here */}
+
+          {/* // Other way to do conditional rendering:
+          {!selectedTopic ? <p>Please select a topic.</p> : null}
+          {selectedTopic ? ( 
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
+          ) : null }
+        */}
+          
+
         </section>
       </main>
     </div>
