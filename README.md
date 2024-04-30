@@ -3,12 +3,7 @@ Welcome to my Git repository for **React - The Complete Guide!** <img height=20p
 
 ### 🏆 Course Overview -
 
-
-
-
-
-
-# ◻ Section 3: React Essentials - Components, JSX, Props, State & more:
+# 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
 
 ###  ◻ Coding Exercise 3 - Building & Using a Component
 ```javascript
@@ -63,7 +58,8 @@ export default App;
 
 ## ✔ Starting Project:
 I build over the starting project with each module learned.
-![3 React essential](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/763a1d38-51bd-4cc5-afc1-1e86aa790778)
+
+![section 3- Starting project](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/9cde95de-790e-4653-9061-300fee55d65e)
 
 ```javascript
 // starting project
@@ -275,7 +271,8 @@ export default App;
 
 
 
-##  ◻ Quiz - Dynamic values and Props
+
+#### ❔ Quiz - Dynamic values and Props
 - Which values can be output as dynamic values in JSX (i.e., between curly braces)?
     - You could output expressions like "1 + 1", variables / constants that hold values, the result of calling a function etc.
 
@@ -440,7 +437,7 @@ function TabButton({ children }) {
 
 
 
-##  ◻ Coding Exercise 6 - Component Composition
+###  ◻ Coding Exercise 6 - Component Composition
 Create a reusable Card component that takes a name prop as an input and, in addition, can be wrapped around any JSX code:
 ```javascript
 import Card from './Card';
@@ -533,7 +530,7 @@ body {
 
 
 
-###  ◻ Coding Exercise 7 - Racting to Event
+### ◻ Coding Exercise 7 - Racting to Event
 ```javascript
 // Your goal is to change the email, password and loggedIn values when the button in the App component is pressed
 // Change them to any values of your choice (except loggedIn => that should be changed to true)
@@ -586,7 +583,7 @@ export default App;
 
 
 
-###  ◻ Coding Exercise 8 - Event Handlers
+### ◻ Coding Exercise 8 - Event Handlers
 ```javascript
 export const user = {
   name: '',
@@ -619,7 +616,7 @@ export default App;
 ![8](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/6fc6c78b-b1fc-4869-a2e9-abadc6da9091)
 
 
-##  ◻ Quiz - Event Handling
+#### ❔ Quiz - Event Handling
 - How should you typically store your component functions?
 Split across multiple files. (One component per file).
 
@@ -638,7 +635,7 @@ By wrapping the execution of your event handling function with another function,
 
 
 
-###  ◻ Coding Exercise 9 - Working with State
+### ◻ Coding Exercise 9 - Working with State
 ```javascript
 // You're working on a part of an online shop where a discounted price should be displayed on the screen once the user clicked a button.
 
@@ -673,7 +670,7 @@ export default function App() {
 
 
 
-##  ◻ Quiz - State and computed values
+#### ❔ Quiz - State and computed values
 - What's the purpose of "State" in React apps?
 The component to which the state belongs and its child and descendent components will be re-evaluated as state changes.
 
@@ -681,7 +678,7 @@ The component to which the state belongs and its child and descendent components
 
 
 
-###  ◻ Coding Exercise 10 - Conditional Content
+### ◻ Coding Exercise 10 - Conditional Content
 ```javascript
 /*
 You're working on a part of a web app that's responsible for showing a warning
@@ -747,21 +744,148 @@ return (
 
 
 
-###  ◻ Coding Exercise 11 - Dynamic Styling
+### ◻ Coding Exercise 11 - Dynamic Styling
 ```javascript
-/* Your task is to dynamically apply a CSS class (active) to the <p>Style me</p> element in the provided React app.
+/* Your task is to dynamically apply a CSS class (active) to the <p>Style me</p> element in the provided React app.*/
+import React from 'react';
 
-The class should be applied when the <button> is clicked for the first time. */
+// don't change the Component name "App"
+export default function App() {
+      const [isClicked, setIsClicked] = React.useState(false);
+
+function handleClick(){
+    setIsClicked(true);
+    // setHighlighted(isHighlighted => !isHighlighted);
+    }
+}
+    return (
+        <div>
+            <p className={isClicked ? 'active' : undefined}>Style me!</p>
+            <button onClick={handleClick}>Toggle style</button>
+        </div>
+    );
+}
 ```
+![11](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/4fbc70bd-74d7-48d5-8420-236e4691d8ce)
 
-###  ◻ Coding Exercise 12 - Dynamic List Content
+
+
+
+
+
+### ◻ Coding Exercise 12 - Dynamic List Content
 ```javascript
-/* You're working on a "Todo List" web app and your task is to output a list of dummy todo items dynamically. For this task, a Todo component has been prepared for you, though you must still add some code to it to receive and output the todo text.
+/* You're working on a "Todo List" web app and your task is to output a list of dummy todo items
+dynamically. For this task, a Todo component has been prepared for you,
+though you must still add some code to it to receive and output the todo text.
 
-To be more precise: In the App component, you should transform the DUMMY_TODOS array that's provided to you (which must not be changed!) to a list of JSX elements (<Todo> elements to be precise). Every Todo component item must receive and output the todo text via a prop called text. */
+To be more precise: In the App component, you should transform the DUMMY_TODOS array that's
+provided to you to a list of JSX elements
+(<Todo> elements to be precise).
+Every Todo component item must receive and output the todo text via a prop called text. */
+
+//Todo.js:
+import React from 'react';
+// As a first step, you should make sure that the Todo component is able to receive and output a text prop:
+export default function Todo(props) {
+    return(
+    <li>
+    {props.text}
+    </li>
+    );
+}
+//With that out of the way, you can re-use this Todo component for different todo items.
+
+
+// App.js:
+import React from 'react';
+import Todo from './Todo'
+// don't remove the export keyword here!
+export const DUMMY_TODOS = [
+    'Learn React',
+    'Practice React',
+    'Profit!'
+];
+// Therefore, as a next step, you should dynamically map the DUMMY_TODOS array to an array full of <Todo /> JSX elements (which then can be output as part of the App component's JSX code). This is achieved via the built-in map() method:
+export default function App() {
+  
+return (
+<ul>  
+ { DUMMY_TODOS.map( todo  => 
+  <Todo text={todo}/>) }
+   </ul>
+    );
+}
+
+index.css:
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 3rem;
+    background-color: #2d2c2c;
+    color: #959090;
+    text-align: center;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #8567fd;
+    color: white;
+    border: 2px solid #8567fd;
+    border-radius: 6px;
+}
 ```
+![12](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/202927fb-12be-4c8a-9d3c-6d8e8982e96b)
 
-###  ◻ Coding Exercise 13 - Using Fragments
+
+#### ❔ Quiz - Conditional Content & Dynamic Lists
+![quiz3](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/fcfda662-a56d-46cf-a598-690c5f6be881)
+![quiz4](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/388c70c6-afbf-44f5-aac0-0d29d96fab85)
+
+![quiz](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/74f0c209-ff69-4a2e-a501-c787a8c6f9fe)
+
+![quiz2](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/09318932-0a6c-4a67-b100-04fd9dd794c1)
+
+
+## ✔ Finished Project:
+![section 3- finished project](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/21a1e991-a991-4002-8542-99fea1ded567)
+
+<br>
+
+---
+<br>
+
+
+
+
+
+# 📔 Section 4: React Essentials - Deep Dive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ◻ Coding Exercise 13 - Using Fragments
 ```javascript
 /* Your task is to edit the existing Summary component such that it outputs the following content:
 <h1>Summary</h1>
@@ -775,7 +899,7 @@ For example, this code would be wrong:
 </div> */
 ```
 
-###  ◻ Coding Exercise 14 - Forwarding Props
+### ◻ Coding Exercise 14 - Forwarding Props
 ```javascript
 /* Your task is to work on the Input component such that it either returns a <textarea> element or an <input> element, depending on whether a richText prop set on Input is true or false.
 
@@ -789,7 +913,7 @@ I.e., it should be usable like this:
 (as seen in the existing App.js file) */
 ```
 
-###  ◻ Coding Exercise 15 - Creating Flexible Components
+### ◻ Coding Exercise 15 - Creating Flexible Components
 ```javascript
 /* Your task is to build a highly re-usable, custom Button component that can be used in all the following ways (also see the code in the App.js file):
 "Filled" mode (default):
@@ -798,7 +922,7 @@ or
 <Button mode="filled">Filled</Button> */
 ```
 
-###  ◻ Coding Exercise 16 - Two-Way-Binding
+### ◻ Coding Exercise 16 - Two-Way-Binding
 ```javascript
 /* Your task is to collect the values entered into the two input controls (<textarea> and <input>) via two-way binding.
 In addition, you should pass the collected values via the appropriate props to the already existing Review component.
@@ -814,19 +938,19 @@ The final app should allow users to enter values and then see those entered valu
 
 
 
-###  ◻ Coding Exercise 17 - Dynamic Styling with Inline Styles
+### ◻ Coding Exercise 17 - Dynamic Styling with Inline Styles
 ```javascript
 
 ```
-###  ◻ Coding Exercise 18 - Dynamic Styling with CSS Classes
+### ◻ Coding Exercise 18 - Dynamic Styling with CSS Classes
 ```javascript
 
 ```
-###  ◻ Coding Exercise 19 - Exercise: Dynamic Styles
+### ◻ Coding Exercise 19 - Exercise: Dynamic Styles
 ```javascript
 
 ```
-###  ◻ Coding Exercise 20 - Exercise: Fix Errors
+### ◻ Coding Exercise 20 - Exercise: Fix Errors
 ```javascript
 
 ```
@@ -986,7 +1110,7 @@ The final app should allow users to enter values and then see those entered valu
 ---
 <br>
 
-# ◻ Section 2: JavaScript Refresher:
+# 📔 Section 2: JavaScript Refresher:
 ### ◻ Arrow Function: 
 ```javascript
 default function (){
