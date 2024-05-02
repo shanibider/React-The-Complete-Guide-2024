@@ -31,6 +31,10 @@ function App() {
     );
   }
 
+
+  // In React, inside the return statement, we must wrap the adjacent JSX elements in a single parent element.
+  // In this case, we are wrapping the Header and main elements in a fragment. (<> </>)
+  // Otherwise, we can also wrap them in a div element, or <Fragment> element.
   return (
     <>
       <Header />
