@@ -867,37 +867,45 @@ li {
 
 # 📔 Section 4: React Essentials - Deep Dive
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### ◻ Coding Exercise 13 - Using Fragments
 ```javascript
 /* Your task is to edit the existing Summary component such that it outputs the following content:
 <h1>Summary</h1>
 <p>{text}</p>
 Inside the Summary component, this content must not be wrapped by any other HTML element!
-
 For example, this code would be wrong:
 <div>
   <h1>Summary</h1>
   <p>{text}</p>
 </div> */
+
+function Summary({ text }) {
+  return(
+  <>
+  <h1>Summary</h1>
+  <p>{text}</p>
+</>
+);
+}
+
+function App() {
+  return (
+    <div id="app" data-testid="app">
+      <Summary text="Fragments help you avoid unnecessary HTML elements." />
+    </div>
+  );
+}
+
+export default App;
 ```
+![13](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/01645047-ed68-4db9-bb79-f2ee94775cd3)
+
+
+
+
+
+
+
 
 ### ◻ Coding Exercise 14 - Forwarding Props
 ```javascript
@@ -911,7 +919,87 @@ In addition, the Input component should forward all other props directly to the 
 I.e., it should be usable like this:
 <Input type="text" placeholder="Your name" />
 (as seen in the existing App.js file) */
+
+
+//app.js
+import Input from './Input';
+function App() {
+  return (
+    <div id="content">
+      <Input type="text" placeholder="Your name" />
+      <Input richText placeholder="Your message" />
+    </div>
+  );
+}
+export default App;
+
+
+// input.js
+// destructuring that prop and then using it in an if statement.
+// As a second step, the Input component is then adjusted to collect all other props that may be set on the component via the special "rest property" syntax.
+export default function Input( {richText, ...props} ) {
+  // return a <textarea> if a richText prop is true
+  // return an <input> otherwise
+  // forward / set the received props on the returned elements
+    
+  // The props object that's created by that syntax is then, as a last step, spread onto the returned elements.
+  if (richText){
+     return <textarea {...props}/> ;
+  }
+  else
+  {
+     return <input {...props}/>;
+  }
+}
+
+
+index.css:
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#979a99, #bcc1bf);
+  color: #2c312f;
+  min-height: 100vh;
+}
+#content {
+  width: 25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: linear-gradient(#5d6965, #5b6d66);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+input, textarea {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #979a99;
+  background: #e5e8e7;
+  width: 100%;
+  margin: 1rem 0;
+}
 ```
+![14](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/0c6face0-6ed3-4e63-b749-395afbf6b003)
+
+
+
+
+
+
+
+
+
+
 
 ### ◻ Coding Exercise 15 - Creating Flexible Components
 ```javascript
@@ -954,6 +1042,57 @@ The final app should allow users to enter values and then see those entered valu
 ```javascript
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
