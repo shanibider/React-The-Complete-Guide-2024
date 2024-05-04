@@ -904,9 +904,6 @@ export default App;
 
 
 
-
-
-
 ### ◻ Coding Exercise 14 - Forwarding Props
 ```javascript
 /* Your task is to work on the Input component such that it either returns a <textarea> element or an <input> element, depending on whether a richText prop set on Input is true or false.
@@ -998,17 +995,233 @@ input, textarea {
 
 
 
-
-
-
 ### ◻ Coding Exercise 15 - Creating Flexible Components
 ```javascript
-/* Your task is to build a highly re-usable, custom Button component that can be used in all the following ways (also see the code in the App.js file):
+/* Your task is to build a highly re-usable, custom Button component that can be used in all the following ways
+(also see the code in the App.js file):
 "Filled" mode (default):
 <Button>Default</Button>
 or
-<Button mode="filled">Filled</Button> */
+<Button mode="filled">Filled</Button>
+Hint: To make sure the icon becomes visible, wrap the icon component in the button with a <span> that has the class "button-icon" on it.
+Also wrap the children prop with a <span>!
+You find all the styles (CSS classes) that are required to build a button that supports these different "modes" in the provided index.css file!
+All buttons need a button CSS class - and then, depending on their mode, additional classes.
+In addition, the custom Button component must accept all standard props that could be set on the built-in <button>.
+These props should be forwarded to the default <button> element that will be used in the custom Button component.
+
+Your task is to work on the Button component provided in the Button.js file. Don't add multiple custom components, instead work on that one provided component and make sure that it supports all these different modes & features.
+Also make sure, that if no mode is set, the "filled" mode is assumed as a default. */
+
+// Button.js:
+// mode prop is extracted from the incoming props object.
+// Then it used to dynamically construct a string that contains all to-be-assigned CSS classes.
+// Since the task required a default "button mode" of "filled", the mode prop is assigned a default value of 'filled'.
+// Therefore, Button can be used without the mode prop and still get that "filled look".
+// In addition, the special, built-in children prop is extracted to output the content passed between the <Button> tags.
+// As a next step, to support setting all the default <button> props, all remaining props are collected in a props object via ...
+// The custom Button should also support icons. Therefore, an Icon prop is extracted from the incoming props.
+// It's called Icon and not icon because this prop should hold a component identifier (i.e., a pointer at a component function) as a value.
+
+export default function Button( { children, className, mode= 'filled', Icon, ...props } ) {
+ // Todo: Build this component! Important: 
+ // Wrap the icon with a <span className="button-icon"> to achieve the target look
+ // Also wrap the children prop with a <span>
+ 
+ let cssClasses = `button ${mode}-button`;
+ 
+ // In addition, if the Icon prop is set, the CSS classes are again extended to add the icon-button class
+ if (Icon){
+     cssClasses += ' icon-button';
+ } 
+ // Since those props could also include the 'className' prop, that prop's value is merged into the cssClasses string:
+ if (className){
+     cssClasses += ' ' + className;
+ }  
+ // These props are then spread onto the built-in <button> element:
+ return(
+     <button className={cssClasses} {...props}>     
+     { Icon && (
+      <span className="button-icon">
+      <Icon/>
+      </span>
+     )}     
+     <span>{children}</span>     
+     </button>
+ );
+}
+
+
+// App.js:
+import Button from './Button';
+import HomeIcon from './HomeIcon';
+import PlusIcon from './PlusIcon';
+function App() {
+  return (
+     <div id="app">
+      <section>
+        <h2>Filled Button (Default)</h2>
+        <p>
+          <Button>Default</Button>
+        </p>
+        <p>
+          <Button className="filled-button" mode="filled">Filled (Default)</Button>
+        </p>
+      </section>
+      
+      <section>
+        <h2>Button with Outline</h2>
+        <p>
+          <Button mode="outline">Outline</Button>
+        </p>
+      </section>
+      
+      <section>
+        <h2>Text-only Button</h2>
+        <p>
+          <Button mode="text">Text</Button>
+        </p>
+      </section>
+      
+      <section>
+        <h2>Button with Icon</h2>
+        <p>
+          <Button Icon={HomeIcon}>Home</Button>
+        </p>
+        <p>
+          <Button Icon={PlusIcon} mode="text">
+            Add
+          </Button>
+        </p>
+      </section>
+      
+      <section>
+        <h2>Buttons Should Support Any Props</h2>
+        <p>
+          <Button mode="filled" disabled>
+            Disabled
+          </Button>
+        </p>
+        <p>
+          <Button onClick={() => console.log('Clicked!')}>Click me</Button>
+        </p>
+      </section>
+      
+    </div>
+  );
+}
+export default App;
+
+// index.css:
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#f3f0f8, #d6d2db);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+section {
+  margin: 1rem auto;
+  max-width: 30rem;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #030a1b;
+}
+.button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.button-icon {
+  width: 1rem;
+  height: 1rem;
+}
+.filled-button {
+  background: linear-gradient(#7fa1f7, #6085e4);
+  color: #030a1b;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.filled-button:hover {
+  background: linear-gradient(#89a9fb, #6890f6);
+}
+.filled-button:disabled {
+  background: #a3a9b7;
+  color: #3a445c;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.outline-button {
+  border: 1px solid #2658d6;
+  color: #2658d6;
+}
+.outline-button:hover {
+  background: #cbd8fc;
+}
+.text-button {
+  color: #2658d6;
+}
+.text-button:hover {
+  background: #cbd8fc;
+}
+
+// PlusIcon.js:
+export default function PlusIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+    </svg>
+  );
+}
+// HomeIcon.js:
+export default function HomeIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 ```
+![15](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/2d014149-8799-4927-8e33-27d56c9713cc)
+
+
+
+
+
+
+
+
 
 ### ◻ Coding Exercise 16 - Two-Way-Binding
 ```javascript
