@@ -3,7 +3,7 @@ Welcome to my Git repository for **React - The Complete Guide!** <img height=20p
 
 ### 🏆 Course Overview -
 
-# 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
+## 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
 
 ###  ◻ Coding Exercise 3 - Building & Using a Component
 ```javascript
@@ -1462,7 +1462,7 @@ The final app should allow users to enter values and then see those entered valu
 ---
 <br>
 
-# 📔 Section 2: JavaScript Refresher:
+## 📔 Section 2: JavaScript Refresher:
 ### ◻ Arrow Function: 
 ```javascript
 default function (){
