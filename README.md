@@ -1225,11 +1225,160 @@ export default function HomeIcon() {
 
 ### ◻ Coding Exercise 16 - Two-Way-Binding
 ```javascript
-/* Your task is to collect the values entered into the two input controls (<textarea> and <input>) via two-way binding.
-In addition, you should pass the collected values via the appropriate props to the already existing Review component.
-Important: In this Udemy workspace, you must use React.useState() instead of just useState()!
-The final app should allow users to enter values and then see those entered values in the Review component which is output below the input components. */
+/* Your task is to collect the values entered into the two input controls
+(<textarea> and <input>) via two-way binding.
+In addition, you should pass the collected values via the appropriate
+props to the already existing Review component.
+The final app should allow users to enter values and then see those entered values in the Review
+component which is output below the input components. */
+// App.js
+import React from 'react';
+import Review from './Review'
+function App() {
+// To store the entered values
+    const [userFeedback, setUserFeedback] = React.useState('');
+    const [studentName, setStudentName] = React.useState('');
+
+//  event object is generated & provided automatically by React.
+// event.target refers to the input control, event.target.value therefore contains the value provided by the user.
+  function handleFeedbackChange(event) {
+    setUserFeedback(event.target.value);
+  }
+  function handleNameChange(event) {
+    setStudentName(event.target.value);
+  }  
+  return (
+    <>
+      <section id="feedback">
+        <h2>Please share some feedback</h2>        
+        <p>
+{/*first step is to listen to value changes on the <textarea> and <input> elements.*/}
+          <label >Your Feedback</label>
+          <textarea onChange={handleFeedbackChange} value={userFeedback}/>
+        </p>
+        <p>
+          <label>Your Name</label>
+          <input type="text" onChange={handleNameChange} value={studentName}/>
+        </p>
+        </section>      
+      <section id="draft">
+        <h2>Your feedback</h2>
+
+{/* To complete the task, the state values passed to Review component by setting its feedback and student props */}
+        <Review feedback={userFeedback} student={studentName}/>
+
+        <p>
+          <button>Save</button>
+        </p>
+      </section>
+    </>
+  );
+}
+export default App;
+
+// Review.js
+export default function Review({ feedback, student }) {
+  return (
+    <figure>
+      <blockquote>
+        <p>{feedback}</p>
+      </blockquote>
+      <figcaption>{student}</figcaption>
+    </figure>
+  );
+}
+// index.css
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#180d27, #0c0219);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+#feedback {
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #669ae7;
+  color: #041023;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+#feedback p {
+  margin: 0.5rem 0;
+}
+#feedback label {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #364660;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+#feedback input,
+#feedback textarea {
+  font: inherit;
+  display: block;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #798aa9;
+  background-color: #b4c4e6;
+  color: #041023;
+}
+#draft {
+  font-family: 'Lato', sans-serif;
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #67d7b0;
+  color: #0b3929;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+#draft figure {
+  margin: 0;
+  padding: 0;
+}
+#draft blockquote {
+  margin: 0 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #65b69a;
+  border-radius: 4px;
+  color: #042217;
+  font-style: italic;
+}
+#draft blockquote p {
+  margin: 0;
+}
+#draft figcaption {
+  margin: 0.2rem 0;
+  font-size: 0.75rem;
+}
+#draft button {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #0b3929;
+  color: #ecf8f4;
+  font-size: 1rem;
+  cursor: pointer;
+}
 ```
+![16](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/c7a9133e-2689-4dd6-8e7c-f899e47984a9)
+
+
+
 
 
 
