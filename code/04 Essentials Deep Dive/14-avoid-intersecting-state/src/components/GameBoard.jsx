@@ -24,6 +24,7 @@ export default function GameBoard({ onSelectSquare }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
+              {/* this will not work well. onClick shoul recievr anonymous function */}
                 <button onClick={onSelectSquare}>{playerSymbol}</button>
               </li>
             ))}

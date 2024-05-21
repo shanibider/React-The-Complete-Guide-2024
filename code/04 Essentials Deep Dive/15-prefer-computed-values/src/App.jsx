@@ -41,6 +41,7 @@ function App() {
             isActive={activePlayer === 'O'}
           />
         </ol>
+        {/* passing 2 props - gameTurns array as 'turns', and handleSelectSquare as'onSelectSquare' */}
         <GameBoard
           onSelectSquare={handleSelectSquare}
           turns={gameTurns}

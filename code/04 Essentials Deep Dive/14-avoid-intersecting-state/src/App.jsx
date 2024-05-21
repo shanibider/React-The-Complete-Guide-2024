@@ -18,9 +18,9 @@ function App() {
 
     // here we need some information about the turn that took place  
   setGameTurns((prevTurns) => {   // recieve an array of previous turns
+    // we create currentPlayer to not use activePlayer directly
       let currentPlayer = 'X';
-      // Determines the currentPlayer based on the previous turns.
-      // If the last turn was made by 'X', the current player will be 'O'.
+      // If the last turn was made by 'X', the current player will be 'O', and we have at least one turn
       if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
         currentPlayer = 'O';
       }

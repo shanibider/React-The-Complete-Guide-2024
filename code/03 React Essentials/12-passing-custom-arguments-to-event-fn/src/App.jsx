@@ -4,6 +4,7 @@ import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  // handleSelectbased on the selected button clicked
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
     console.log(selectedButton);
@@ -29,6 +30,9 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
+          {/* instead of passing only 'handleSelect' i pass arrow function.
+          Now the value that pass to onSelect, and then to onClick,
+          and now i can write code in the right side of the arrow that will be executed whe the arrow function will be executed.   */}
             <TabButton onSelect={() => handleSelect('components')}>
               Components
             </TabButton>
