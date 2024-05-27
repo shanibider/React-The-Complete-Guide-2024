@@ -4,12 +4,16 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-// recieve 2 props - onSelectSquare and turns
+// Here we should expect 2 props - onSelectSquare and turns
 export default function GameBoard({ onSelectSquare, turns }) {
+// now we will need to turn 'turns' array into multi-dimention array.
+// now we lift the state up, so we dont need to manage it here, we just need to render the game board
   let gameBoard = initialGameBoard;
 
+  // now we want to override 'gameBoard' with data dewrive from 'turns' (if we have turns)
   for (const turn of turns) {
-    // For each turn, it destructures the turn object to extract square and player.
+    // For each turn, we destructures the info about the turn that occured, 
+    // from that object that stores in 'turns' array
     const { square, player } = turn;
     const { row, col } = square; // square is an object contains row and col, indicating the position on the board.
 

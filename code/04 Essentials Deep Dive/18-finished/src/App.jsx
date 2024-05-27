@@ -6,6 +6,7 @@ import Log from './components/Log.jsx';
 import GameOver from './components/GameOver.jsx';
 import { WINNING_COMBINATIONS } from './winning-combinations.js';
 
+// object to store player names associated with their symbols
 const PLAYERS = {
   X: 'Player 1',
   O: 'Player 2'
@@ -15,26 +16,32 @@ const INITIAL_GAME_BOARD = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
-];
+]; // Initial empty game board setup
 
+
+// Function to derive the active player based on the game turns
 function deriveActivePlayer(gameTurns) {
   let currentPlayer = 'X';
 
   if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
     currentPlayer = 'O';
   }
-
   return currentPlayer;
 }
 
+
+// derive the game board state based on the game turns
 function deriveGameBoard(gameTurns) {
+  // Create a deep copy of the initial game board to avoid mutation.
+  // (not using the inital game board, but make a copy of it)
   let gameBoard = [...INITIAL_GAME_BOARD.map((array) => [...array])];
 
+    // Populate the game board based on the game turns
   for (const turn of gameTurns) {
     const { square, player } = turn;
     const { row, col } = square;
 
-    gameBoard[row][col] = player;
+    gameBoard[row][col] = player; // Set the player symbol in the respective square
   }
 
   return gameBoard;
@@ -64,17 +71,29 @@ function deriveWinner(gameBoard, players) {
 }
 
 function App() {
+  // adding new state to store player names.
+  // 'players' will store player name associated with his symbol, 
+  // and 'setPlayers' should be called whenever we click 'save' button in Player component.
   const [players, setPlayers] = useState(PLAYERS);
+  /* same as writing:
+  const [players, setPlayers] = useState({
+    X: 'Player 1',
+    O: 'Player 2'
+  });
+  */
   const [gameTurns, setGameTurns] = useState([]);
 
-  const activePlayer = deriveActivePlayer(gameTurns);
-  const gameBoard = deriveGameBoard(gameTurns);
-  const winner = deriveWinner(gameBoard, players);
-  const hasDraw = gameTurns.length === 9 && !winner;
 
+  const activePlayer = deriveActivePlayer(gameTurns); // Derive the active player based on the game turns
+  const gameBoard = deriveGameBoard(gameTurns); // Derive the game board state based on the game turns
+  const winner = deriveWinner(gameBoard, players); // Determine the winner based on the game board state
+  const hasDraw = gameTurns.length === 9 && !winner; // Check if the game is a draw (all squares filled and no winner)
+
+
+    // Handle selecting a square on the game board
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
-      const currentPlayer = deriveActivePlayer(prevTurns);
+      const currentPlayer = deriveActivePlayer(prevTurns); // Determine the current player
 
       const updatedTurns = [
         { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
@@ -85,18 +104,26 @@ function App() {
     });
   }
 
+
+  // handle restarting the game
   function handleRestart() {
-    setGameTurns([]);
+    setGameTurns([]); // Reset the game turns state
   }
 
+
+
+  // Update player data - function to handle changing a player's name (setPlayers)
   function handlePlayerNameChange(symbol, newName) {
     setPlayers(prevPlayers => {
+      // return a new object which is a new player state where i'll spread my 
+      // old player into. And then I'll override one of the 2 properties of the player
       return {
         ...prevPlayers,
         [symbol]: newName
       };
     });
   }
+
 
   return (
     <main>
@@ -115,11 +142,15 @@ function App() {
             onChangeName={handlePlayerNameChange}
           />
         </ol>
+        {/* adding 'onRestart' prop, with function to handle restart of the game */}
+        {/* Render GameOver component if there's a winner or a draw and pass the handleRestart function */}
         {(winner || hasDraw) && (
           <GameOver winner={winner} onRestart={handleRestart} />
         )}
+        {/* Render GameBoard component and pass down the handleSelectSquare function and the game board state */}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
+       {/* Render Log component and pass down the game turns */}
       <Log turns={gameTurns} />
     </main>
   );

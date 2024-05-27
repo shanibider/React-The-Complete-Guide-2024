@@ -26,6 +26,9 @@ export default function GameBoard({ onSelectSquare, turns }) {
   //   onSelectSquare();
   // }
 
+
+  // prevent button to be clicked more than once.
+  // disabled prop is a react button element. If it's X/O make it disabled.
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (

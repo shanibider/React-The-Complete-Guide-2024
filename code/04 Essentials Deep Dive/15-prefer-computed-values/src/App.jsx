@@ -10,13 +10,15 @@ function App() {
 
   function handleSelectSquare(rowIndex, colIndex) {
     setActivePlayer((curActivePlayer) => (curActivePlayer === 'X' ? 'O' : 'X'));
+    // here we want to update our turns  
     setGameTurns((prevTurns) => {
-      let currentPlayer = 'X';
-
+      let currentPlayer = 'X'; // default value
       if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
         currentPlayer = 'O';
       }
 
+      // insert the new turn at the beginning of the array, and then spread the previous turns.
+      // in plater we dont want to store 'activePlayer', so we create 'currentPlayer' instead.
       const updatedTurns = [
         { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
         ...prevTurns,

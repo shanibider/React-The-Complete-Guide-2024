@@ -1,3 +1,4 @@
+// recieve 'onRestart' from App
 export default function GameOver({ winner, onRestart }) {
   return (
     <div id="game-over">
@@ -5,6 +6,8 @@ export default function GameOver({ winner, onRestart }) {
       {winner && <p>{winner} won!</p>}
       {!winner && <p>It&apos;s a draw!</p>}
       <p>
+      {/* making Rematch button clickable, by adding 'onRestart' prop (came from App),
+      to onClick prop. */}
         <button onClick={onRestart}>Rematch!</button>
       </p>
     </div>

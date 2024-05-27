@@ -1,3 +1,4 @@
+// array of arrays, each array contains 3 objects, each object has row and column properties
 export const WINNING_COMBINATIONS = [
   [
     { row: 0, column: 0 },
