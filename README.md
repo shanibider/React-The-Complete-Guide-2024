@@ -1,6 +1,8 @@
 # React - The Complete Guide 2024 (incl. React Router & Redux) 🚀
 Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> This 68 hours Udemy course has equipped me with comprehensive knowledge and practical experience in React development, including components, props, React-hooks, forms, Redux, Routing, states + responses, Next.js. 🧾
 
+#### 📎 Course Slides are attached in Resources folder.
+
 ### 🏆 Course Overview -
 
 ## 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
