@@ -5,6 +5,8 @@ import UserInput from './components/UserInput.jsx';
 import Results from './components/Results.jsx';
 
 function App() {
+  // Code that was in UserInput.jsx.
+  // I move it here so that i can use the state also in the Results component.
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
     annualInvestment: 1200,
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <>
+    {/* I declare 2 prop to pass to children components with the state 'userInput' */}
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
       <Results input={userInput} />

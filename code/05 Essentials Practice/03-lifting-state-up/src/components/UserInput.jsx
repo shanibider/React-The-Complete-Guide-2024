@@ -1,4 +1,6 @@
+// Here i recieve the props from App.jsx and i use them to set the value of the input fields.
 export default function UserInput({ onChange, userInput }) {
+ // Move the code that was here to App.jsx
   return (
     <section id="user-input">
       <div className="input-group">

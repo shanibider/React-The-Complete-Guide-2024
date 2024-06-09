@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 export default function UserInput() {
+  //  Ine the next chapter i will pass the state to the parent component (lift the state up).
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
     annualInvestment: 1200,
@@ -11,7 +12,7 @@ export default function UserInput() {
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       return {
-        ...prevUserInput,
+        ...prevUserInput, // spread the old value
         [inputIdentifier]: newValue,
       };
     });
@@ -22,6 +23,11 @@ export default function UserInput() {
       <div className="input-group">
         <p>
           <label>Initial Investment</label>
+          {/* Can't write only onChange={handleChange}, because than react will pass obly 1 argument to the function as defualt.
+          So i create anonymous function, when i can have full control how the function will be executed. 
+          Second argument is event.object, that have target and value properties. 
+          'value' is prop that set the value that will be displayed in the screen for this input field. 
+          */}
           <input
             type="number"
             required
