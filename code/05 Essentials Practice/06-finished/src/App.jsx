@@ -12,7 +12,7 @@ function App() {
     duration: 10,
   });
 
-  // check if the duration is greater than or equal to 1
+  // adding variable to check if the duration is greater than or equal to 1
   const inputIsValid = userInput.duration >= 1;
 
   function handleChange(inputIdentifier, newValue) {
@@ -28,7 +28,7 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      {/* Conditionally render the Results components. */}
+      {/* Conditionally render the Results components with && */}
       {!inputIsValid && (
         <p className="center">Please enter a duration greater than zero.</p>
       )}
