@@ -1,4 +1,5 @@
-// recieve 'onRestart' from App
+// recieve 'onRestart' prop from App;
+// Passing a function outside from GameOver to this button.
 export default function GameOver({ winner, onRestart }) {
   return (
     <div id="game-over">
