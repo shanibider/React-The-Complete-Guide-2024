@@ -1,10 +1,40 @@
 # React - The Complete Guide 2024 (incl. React Router & Redux) 🚀
-Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> This 68 hours Udemy course has equipped me with comprehensive knowledge and practical experience in React development, including components, props, React-hooks, forms, Redux, Routing, states + responses, Next.js. 🧾
+Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> 
 
-#### 📎 Course Slides are attached in Resources folder.
+I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximilian Schwarzmüller, which gave me a solid understanding and hands-on experience with `React` development. I learned about `components, props, React hooks, forms, Redux, routing, states and responses, and Next.js`. 🧾
+> 📎 Course Slides are attached in Resources folder.
+
+## 📌 Table of Content
+- [ ] Valuable React Resources
+- [ ] Course Overview 
+- [ ] Coding Exercises
+- [ ] Key Topics Covered
+
+--- 
+
+### 🗂️ Valuable React Resources:
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/3f462711-0661-4ddf-b9b5-ed0c4c523073">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/60cd1f45-f7d1-4650-aa20-ff56fcf60bc3">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/1bb17460-5789-439d-94f3-6b28c356a409">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f0612755-ae34-45b5-9b5c-08dae02094a5">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/386ba754-b09c-4b07-b144-b984048a4986">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/9e381dba-1092-44fc-8d7b-33f2c20135fd">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/421893a6-13c8-479c-bc9c-04728f97647b">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f585b9e9-c41a-40a8-a46e-b80eba9c96de">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/63bf0152-b8df-4f60-932e-37cf85b1342c">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/46551685-2f8a-4775-b985-bca72e064222">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/5879cba7-924f-44c0-bf9d-00003335c914">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/4a2ed2fd-7d0a-4d30-8198-ceb9f4a8822a">
+
+
+
+
+
+---
+
+
 
 ### 🏆 Course Overview -
-
 ## 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
 
 ###  ◻ Coding Exercise 3 - Building & Using a Component
