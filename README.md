@@ -1,10 +1,37 @@
 # React - The Complete Guide 2024 (incl. React Router & Redux) 🚀
-Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> This 68 hours Udemy course has equipped me with comprehensive knowledge and practical experience in React development, including components, props, React-hooks, forms, Redux, Routing, states + responses, Next.js. 🧾
+Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> 
 
-#### 📎 Course Slides are attached in Resources folder.
+I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximilian Schwarzmüller, which gave me a solid understanding and hands-on experience with `React` development. I learned about `components, props, React hooks, forms, Redux, routing, states and responses, and Next.js`. 🧾
+> 📎 Course Slides are attached in Resources folder.
+
+--- 
+
+### 🗂️ Important React Resources:
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/19ff94b5-0ebe-447d-aec7-b56e4e3b47e3">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/dc6e54d4-5db0-477a-94dd-e13f1d39f7ec">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/40493e61-0822-48c8-96bd-69a18fb4c557">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/fdc9d3a3-c540-4fd1-8515-6a704bade6b3">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/0fc3d69f-3240-4e78-a739-25a181db179d">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/af20eba8-87ed-497e-9b44-9ed8daba57b4">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/803345eb-0673-4b43-8be4-2726554443fb">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/0422416e-efc7-4278-aa96-68f0b6735ccc">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/49460a29-8a25-4b87-9696-e495d89d9b16">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/f7d8bf49-d8bf-47b2-a85d-1a0aa68763b0">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/7d288e25-77c0-493c-a1d6-11eabcbfb12a">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/70b49c90-dd91-4667-bab6-ed7f41e174c4">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/b3fb5a28-f83c-4cbb-aa99-4e1fdf20afd9">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/24dcbbb2-39ed-4f38-a2ba-3b49302ecabc">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/bbecde1d-053c-4904-86a8-4f9de1db02f3">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/14bf08e5-694b-4489-862d-6bd8f809a487">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/3d7d7c8f-ca86-4d67-ae2a-89d5efb96576">
+<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/e3fc1c36-43d1-40b5-a941-b1ae5e5fd8ce">
+
+
+---
+
+
 
 ### 🏆 Course Overview -
-
 ## 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
 
 ###  ◻ Coding Exercise 3 - Building & Using a Component
