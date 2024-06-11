@@ -12,6 +12,7 @@ const PLAYERS = {
   O: 'Player 2'
 };
 
+// array full of arrays (refrences values)
 const INITIAL_GAME_BOARD = [
   [null, null, null],
   [null, null, null],
@@ -30,7 +31,7 @@ function deriveActivePlayer(gameTurns) {
 }
 
 
-// derive the game board state based on the game turns
+// Derive the game board state based on the game turns, with a brand new array (thanks to deep copy)
 function deriveGameBoard(gameTurns) {
   // Create a deep copy of the initial game board to avoid mutation.
   // (not using the inital game board, but make a copy of it)
@@ -42,10 +43,15 @@ function deriveGameBoard(gameTurns) {
     const { row, col } = square;
 
     gameBoard[row][col] = player; // Set the player symbol in the respective square
+    // when im setting the player symbol im doing it on the original array, so after resetting the game,
+    // the inital game board will be still this edited old array.
+    // The solution is to make a deep copy of the initial game board, and then edit it. (let gameBoard = [...INITIAL_GAME_BOARD], and [...array])
   }
-
   return gameBoard;
 }
+
+
+
 
 function deriveWinner(gameBoard, players) {
   let winner;
@@ -106,6 +112,8 @@ function App() {
 
 
   // handle restarting the game
+  // I want this function to triggered from the button in GameOver, so i accept there 'onRestart' prop,
+  // and here i'll declare 'onRestart' prop with this function as a value.
   function handleRestart() {
     setGameTurns([]); // Reset the game turns state
   }
