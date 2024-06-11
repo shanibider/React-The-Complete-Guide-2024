@@ -4,27 +4,30 @@ Welcome to my Git repository for **React - The Complete Guide!** <img height=20p
 I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximilian Schwarzmüller, which gave me a solid understanding and hands-on experience with `React` development. I learned about `components, props, React hooks, forms, Redux, routing, states and responses, and Next.js`. 🧾
 > 📎 Course Slides are attached in Resources folder.
 
+## 📌 Table of Content
+- [ ] Valuable React Resources
+- [ ] Course Overview 
+- [ ] Coding Exercises
+- [ ] Key Topics Covered
+
 --- 
 
-### 🗂️ Important React Resources:
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/19ff94b5-0ebe-447d-aec7-b56e4e3b47e3">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/dc6e54d4-5db0-477a-94dd-e13f1d39f7ec">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/40493e61-0822-48c8-96bd-69a18fb4c557">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/fdc9d3a3-c540-4fd1-8515-6a704bade6b3">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/0fc3d69f-3240-4e78-a739-25a181db179d">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/af20eba8-87ed-497e-9b44-9ed8daba57b4">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/803345eb-0673-4b43-8be4-2726554443fb">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/0422416e-efc7-4278-aa96-68f0b6735ccc">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/49460a29-8a25-4b87-9696-e495d89d9b16">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/f7d8bf49-d8bf-47b2-a85d-1a0aa68763b0">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/7d288e25-77c0-493c-a1d6-11eabcbfb12a">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/70b49c90-dd91-4667-bab6-ed7f41e174c4">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/b3fb5a28-f83c-4cbb-aa99-4e1fdf20afd9">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/24dcbbb2-39ed-4f38-a2ba-3b49302ecabc">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/bbecde1d-053c-4904-86a8-4f9de1db02f3">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/14bf08e5-694b-4489-862d-6bd8f809a487">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/3d7d7c8f-ca86-4d67-ae2a-89d5efb96576">
-<img style="width:70%; max-width:100px;" alt="image" src="https://github.com/shanibider/Readme-tests/assets/72359805/e3fc1c36-43d1-40b5-a941-b1ae5e5fd8ce">
+### 🗂️ Valuable React Resources:
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/3f462711-0661-4ddf-b9b5-ed0c4c523073">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/60cd1f45-f7d1-4650-aa20-ff56fcf60bc3">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/1bb17460-5789-439d-94f3-6b28c356a409">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f0612755-ae34-45b5-9b5c-08dae02094a5">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/386ba754-b09c-4b07-b144-b984048a4986">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/9e381dba-1092-44fc-8d7b-33f2c20135fd">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/421893a6-13c8-479c-bc9c-04728f97647b">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/f585b9e9-c41a-40a8-a46e-b80eba9c96de">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/63bf0152-b8df-4f60-932e-37cf85b1342c">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/46551685-2f8a-4775-b985-bca72e064222">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/5879cba7-924f-44c0-bf9d-00003335c914">
+<img style="width:80%; max-width:100px;" alt="image" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/4a2ed2fd-7d0a-4d30-8198-ceb9f4a8822a">
+
+
+
 
 
 ---
