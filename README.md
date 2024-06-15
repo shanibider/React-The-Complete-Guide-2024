@@ -1420,25 +1420,111 @@ body {
 ```
 ![16](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/c7a9133e-2689-4dd6-8e7c-f899e47984a9)
 
-
-
-
-
-
-
-
+---
 
 
 
 
 ### ◻ Coding Exercise 17 - Dynamic Styling with Inline Styles
 ```javascript
-
+/* Your task is to help out a colleague and style a h1 element dynamically (with inline styles) depending on which button was pressed.
+If the "Yes" button is pressed, the h1 element should receive color:
+"green" as an inline style. If the "No" button is pressed, color: "red" should be applied.
+Initially, when no button has been clicked yet, the color should be set to "white". */
+import React from 'react';
+function App() {
+  const [choice, setChoice] = React.useState(null);
+ 
+  let textColor = 'white';
+ 
+  if (choice === 'yes') {
+    textColor = 'green';
+  } else if (choice === 'no') {
+    textColor = 'red';
+  }
+ 
+  return (
+    <div id="app">
+      <h1 style={{ color: textColor }}>CSS is great!</h1>
+      <menu>
+        <li>
+          <button onClick={() => setChoice('yes')}>Yes</button>
+        </li>
+        <li>
+          <button onClick={() => setChoice('no')}>No</button>
+        </li>
+      </menu>
+    </div>
+  );
+}
 ```
+
+---
+
+
+
+
+
+
 ### ◻ Coding Exercise 18 - Dynamic Styling with CSS Classes
 ```javascript
-
+/* Your task is to enhance the demo app that's given to you such that clicking the "Yes" and "No" buttons changes the styling of the h1 heading element.
+Whenever the "Yes" button is clicked, the "highlight-green" CSS class should be set on the h1 element. For the "No" button, it's the "highlight-red" class that must be applied.
+If not button was clicked yet, no CSS class should be added to the h1 element.*/
+function App() {
+  const [choice, setChoice] = useState(null);
+ 
+  let cssClass;
+ 
+  if (choice === 'yes') {
+    cssClass = 'highlight-green';
+  } else if (choice === 'no') {
+    cssClass = 'highlight-red';
+  }
+   return (
+    <div id="app">
+      <h1 className={cssClass}>CSS is great!</h1>
+      <menu>
+        <li>
+          <button onClick={() = setChoice('yes')}>Yes</button>
+        </li>
+        <li>
+          <button onClick={() = setChoice('no')}>No</button>
+        </li>
+      </menu>
+    </div>
+  );
+}
+export default App;
 ```
+
+---
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### ◻ Coding Exercise 19 - Exercise: Dynamic Styles
 ```javascript
 
