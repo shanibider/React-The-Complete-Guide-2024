@@ -30,22 +30,6 @@ I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximil
 
 
 ### 🏆 Course Overview -
-
-## 📔 Section 6: Styling React Components:
-##### When inspecting the web page, all CSS styles were added dynamically to the DOM, head of the document, by Vite;
-![styling react component-1](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/e2824f29-2bca-44a6-b967-afec047c6c0b)
-
-
-
-
-
-<br>
-
----
-<br>
-
-
-
 ## 📔 Section 3: React Essentials - Components, JSX, Props, State & more:
 
 ###  ◻ Coding Exercise 3 - Building & Using a Component
@@ -1420,29 +1404,94 @@ body {
 ```
 ![16](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/c7a9133e-2689-4dd6-8e7c-f899e47984a9)
 
+<br>
+
+---
+<br>
 
 
-
-
-
-
-
-
-
+## 📔 Section 6: Styling React Components:
+##### When inspecting the web page, all CSS styles were added dynamically to the DOM, head of the document, by Vite;
+![styling react component-1](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/e2824f29-2bca-44a6-b967-afec047c6c0b)
 
 
 ### ◻ Coding Exercise 17 - Dynamic Styling with Inline Styles
 ```javascript
-
+/* Your task is to help out a colleague and style a h1 element dynamically (with inline styles) depending on which button was pressed.
+If the "Yes" button is pressed, the h1 element should receive color:
+"green" as an inline style. If the "No" button is pressed, color: "red" should be applied.
+Initially, when no button has been clicked yet, the color should be set to "white". */
+import React from 'react';
+function App() {
+  const [choice, setChoice] = React.useState(null);
+ 
+  let textColor = 'white';
+ 
+  if (choice === 'yes') {
+    textColor = 'green';
+  } else if (choice === 'no') {
+    textColor = 'red';
+  }
+ 
+  return (
+    <div id="app">
+      <h1 style={{ color: textColor }}>CSS is great!</h1>
+      <menu>
+        <li>
+          <button onClick={() => setChoice('yes')}>Yes</button>
+        </li>
+        <li>
+          <button onClick={() => setChoice('no')}>No</button>
+        </li>
+      </menu>
+    </div>
+  );
+}
 ```
+
+---
+
+
 ### ◻ Coding Exercise 18 - Dynamic Styling with CSS Classes
 ```javascript
-
+/* Your task is to enhance the demo app that's given to you such that clicking the "Yes" and "No" buttons changes the styling of the h1 heading element.
+Whenever the "Yes" button is clicked, the "highlight-green" CSS class should be set on the h1 element. For the "No" button, it's the "highlight-red" class that must be applied.
+If not button was clicked yet, no CSS class should be added to the h1 element.*/
+function App() {
+  const [choice, setChoice] = useState(null);
+ 
+  let cssClass;
+ 
+  if (choice === 'yes') {
+    cssClass = 'highlight-green';
+  } else if (choice === 'no') {
+    cssClass = 'highlight-red';
+  }
+   return (
+    <div id="app">
+      <h1 className={cssClass}>CSS is great!</h1>
+      <menu>
+        <li>
+          <button onClick={() = setChoice('yes')}>Yes</button>
+        </li>
+        <li>
+          <button onClick={() = setChoice('no')}>No</button>
+        </li>
+      </menu>
+    </div>
+  );
+}
+export default App;
 ```
+
+---
+
+
 ### ◻ Coding Exercise 19 - Exercise: Dynamic Styles
 ```javascript
 
 ```
+
 ### ◻ Coding Exercise 20 - Exercise: Fix Errors
 ```javascript
 
@@ -1453,19 +1502,91 @@ body {
 
 
 
+### ◻ Coding Exercise 21 - Accessing DOM Elements with "refs"
+```javascript
+/* Your given a code snippet that's part of a bigger app that deals with user image uploads.
+Since the native, built-in <input type="file"> element is hard to style and doesn't fit the intended app style,
+it's hidden via display: none in the provided index.css file.
+Therefore, to make the file picker work without being displayed, your task is to ensure that the click event on the <input type="file">
+element is triggered whenever the <button>Pick Image</button> is clicked.
+This can be achieved by calling the built-in click() method on the underlying input element.
+You should use React's "ref" feature to get hold of the <input type="file"> element and execute that click()
+method on it whenever the <button> is clicked. */
+// Work Plan:
+// This ref is "connected" to the <input type="file"> element const filepicker = React.useRef();
+// filePicker ref used to get access to the file picker element's underlying JS object.
+// Accessing the 'current' property on the filePicker ref. 
+// This is necessary because refs always are objects with a current property (which then holds the actual value assigned to the ref).
+// Calling the built-in click() on the underlying input object the file picker is then "triggered" without being visible.
+// An event listener function is added, and set as a value for the onClick prop.
+
+import React from 'react';
+function App() {
+  const filePicker = React.useRef();
+ 
+  function handleStartPickImage() {
+    filePicker.current.click();
+  }
+ 
+  return (
+    <div id="app">
+      <p>Please select an image</p>
+      <p>
+        <input data-testid="file-picker" type="file" accept="image/*" ref={filePicker} />
+        <button onClick={handleStartPickImage}>Pick Image</button>
+      </p>
+    </div>
+  );
+}
+```
+
+---
 
 
+### ◻ Coding Exercise 22 - 
+```javascript
 
+```
 
+### ◻ Coding Exercise 23 - 
+```javascript
 
+```
 
+### ◻ Coding Exercise 24 - 
+```javascript
 
+```
 
+### ◻ Coding Exercise 25 - 
+```javascript
 
+```
 
+### ◻ Coding Exercise 26 - 
+```javascript
 
+```
 
+### ◻ Coding Exercise 27 - 
+```javascript
 
+```
+
+### ◻ Coding Exercise 28 - 
+```javascript
+
+```
+
+### ◻ Coding Exercise 29 - 
+```javascript
+
+```
+
+### ◻ Coding Exercise 30 - 
+```javascript
+
+```
 
 
 
