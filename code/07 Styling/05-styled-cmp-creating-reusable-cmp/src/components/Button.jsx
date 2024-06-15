@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+// Creating a styled component named Button
+
 const Button = styled.button`
   padding: 1rem 2rem;
   font-weight: 600;

@@ -24,6 +24,7 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
+        {/* Special way for creating strings in js: `${}`, insdie '{}' i can inject strings. */}
           <label className={`label ${emailNotValid ? 'invalid' : ''}`}>
             Email
           </label>

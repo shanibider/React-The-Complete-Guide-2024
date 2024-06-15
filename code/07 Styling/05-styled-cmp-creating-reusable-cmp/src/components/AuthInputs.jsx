@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { styled } from 'styled-components';
+import { styled } from 'styled-components'; // Import the styled function from the styled-components package
 
 import Button from './Button.jsx';
 import Input from './Input.jsx';
 
+
+// Create a styled component named ControlContainer, with this special syntax
+// And will add it in the render method
 const ControlContainer = styled.div`
   display: flex;
   flex-direction: column;

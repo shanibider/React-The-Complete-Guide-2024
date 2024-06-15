@@ -64,6 +64,9 @@ button:focus {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
+
+/* Change the color of the label if it has 'invalid' class.
+II will add it conditionally. */
 .label.invalid {
   color: #f87171;
 }

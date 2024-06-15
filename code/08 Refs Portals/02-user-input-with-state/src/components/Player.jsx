@@ -4,6 +4,7 @@ export default function Player() {
   const [enteredPlayerName, setEnteredPlayerName] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
+  // for every character entered in the input field, the handleChange function is called
   function handleChange(event) {
     setSubmitted(false);
     setEnteredPlayerName(event.target.value);

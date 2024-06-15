@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 
+// color style is applyed based on the invalid prop
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
@@ -21,9 +22,12 @@ const Input = styled.input`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
+
 export default function CustomInput({ label, invalid, ...props }) {
   return (
     <p>
+    {/*  The 'invalid' prop is build in react prop, therefore we add the $ sign, to avoid warning.
+    The $invalid prop is passed to the styled components */}
       <Label $invalid={invalid}>{label}</Label>
       <Input $invalid={invalid} {...props} />
     </p>

@@ -20,11 +20,15 @@ export default function AuthInputs() {
   const emailNotValid = submitted && !enteredEmail.includes('@');
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
+
+  // All styles are inside this jsx code, no seperation.
+  // But conditional styling is easy to implement.
   return (
     <div id="auth-inputs">
       <div className="controls">
         <p>
           <label>Email</label>
+          {/* conditional  */}
           <input
             type="email"
             style={{

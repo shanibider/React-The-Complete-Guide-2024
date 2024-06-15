@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   margin-top: 2rem;
   margin-bottom: 2rem;
 
+{/* '&' tell this rules of styled-components should affect any image elements inside this header. */}
   & img {
     object-fit: contain;
     margin-bottom: 2rem;
