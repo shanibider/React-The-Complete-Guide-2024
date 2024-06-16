@@ -9,6 +9,7 @@ I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximil
 - [ ] Course Overview 
 - [ ] Coding Exercises
 - [ ] Key Topics Covered
+- [ ] JavaScript Refresher (Arrow Function, Objects, Arrays, The Spread Operator, JS Array Functions).
 
 --- 
 
@@ -1402,6 +1403,7 @@ body {
   cursor: pointer;
 }
 ```
+
 ![16](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/c7a9133e-2689-4dd6-8e7c-f899e47984a9)
 
 <br>
@@ -1448,6 +1450,7 @@ function App() {
   );
 }
 ```
+![17](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/21a72cc2-eb6f-48b8-94f9-eb38d11d8611)
 
 ---
 
@@ -1539,6 +1542,11 @@ function App() {
   );
 }
 ```
+<img height="300px" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/cffa9c00-1031-4baa-ba10-5947c45ab1e1">
+
+
+
+
 
 ---
 
@@ -1775,6 +1783,7 @@ function App() {
 ---
 <br>
 
+
 ## 📔 Section 2: JavaScript Refresher:
 ### ◻ Arrow Function: 
 ```javascript
@@ -1809,7 +1818,7 @@ number => {
 number => ({ age: number }); // wrapping the object in extra parentheses
 ```
 
-### ◻ objects:
+### ◻ Objects:
 ```javascript
 const user = {
 name: "Shani",
@@ -1879,7 +1888,6 @@ hobby: "fitness",
   console.log (usertName);
   console.log (hobby);
 ```
-
 
 #### The Spread Operator `...`
 ```javascript
