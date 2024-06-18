@@ -52,8 +52,3 @@ The index of the current element being processed in the array.
 The array map() was called upon.
 */
 
-
-/*
-Illustrate for each step:
-
-*/

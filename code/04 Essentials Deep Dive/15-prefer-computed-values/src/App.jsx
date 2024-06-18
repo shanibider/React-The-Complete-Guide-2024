@@ -18,7 +18,7 @@ function App() {
       }
 
       // insert the new turn at the beginning of the array, and then spread the previous turns.
-      // in plater we dont want to store 'activePlayer', so we create 'currentPlayer' instead.
+      // in player we dont want to store 'activePlayer', so we create 'currentPlayer' instead.
       const updatedTurns = [
         { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
         ...prevTurns,
