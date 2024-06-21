@@ -1785,9 +1785,123 @@ handleSaveData to retrieve the actual entered input data.
 
 The read values must then be stored in the already-existing userData object.*/
 
+import React, { forwardRef } from 'react';
+ 
+const Input = React.forwardRef(function Input({ label, ...props }, ref) {
+  return (
+    <p className="control">
+      <label>{label}</label>
+      <input ref={ref} {...props} />
+    </p>
+  );
+}); 
+export default Input;
 
+import React from 'react';
+import Input from './Input';
+ 
+export const userData = {
+  name: '',
+  email: '',
+};
+ 
+export function App() {
+  const name = React.useRef();
+  const email = React.useRef();
+ 
+  function handleSaveData() {
+    const enteredName = name.current.value;
+    const enteredEmail = email.current.value;
+ 
+    userData.name = enteredName;
+    userData.email = enteredEmail;
+ 
+    console.log(userData);
+  }
+ 
+  return (
+    <div id="app">
+      <Input type="text" label="Your Name" ref={name} />
+      <Input type="email" label="Your E-Mail" ref={email} />
+      <p id="actions">
+        <button onClick={handleSaveData}>Save Data</button>
+      </p>
+    </div>
+  );
+}
 
+//index.css
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#180d27, #0c0219);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+#app {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 30rem;
+  text-align: center;
+  border-radius: 6px;
+  background: linear-gradient(#341a89, #3a1967);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.control {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #e5d9f1;
+}
+.control input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #e5d9f1;
+  border-radius: 4px;
+  background: transparent;
+  color: #e5d9f1;
+}
+#actions {
+  text-align: right;
+}
+#actions button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: #e5d9f1;
+  cursor: pointer;
+}
+#actions button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
 ```
+![Screenshot](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/882202ba-3c1f-4f43-8725-76c6310284a2)
+
+
+
 
 ---
 
