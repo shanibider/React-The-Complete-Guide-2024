@@ -8,12 +8,13 @@ export default function TimerChallenge({ title, targetTime }) {
   const timer = useRef();
   const dialog = useRef();
 
+  // replace the previos 2 states to new state of remaining time
   const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
 
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
 
   if (timeRemaining <= 0) {
-    clearInterval(timer.current);
+    clearInterval(timer.current); // built-in method to clear the interval
     dialog.current.open();
   }
 
@@ -34,10 +35,11 @@ export default function TimerChallenge({ title, targetTime }) {
 
   return (
     <>
+    {/* adding remainingTime prop */}
       <ResultModal
         ref={dialog}
         targetTime={targetTime}
-        remainingTime={timeRemaining}
+        remainingTime={timeRemaining} 
         onReset={handleReset}
       />
       <section className="challenge">

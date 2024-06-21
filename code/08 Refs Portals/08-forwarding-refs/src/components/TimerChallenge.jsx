@@ -1,12 +1,13 @@
-import { useState, useRef } from 'react';
 
+
+import { useState, useRef } from 'react';
 import ResultModal from './ResultModal.jsx';
 
 // let timer;
 
 export default function TimerChallenge({ title, targetTime }) {
-  const timer = useRef();
-  const dialog = useRef();
+  const timer = useRef(); 
+  const dialog = useRef();// 1. Create a ref to store the dialog element.
 
   const [timerStarted, setTimerStarted] = useState(false);
   const [timerExpired, setTimerExpired] = useState(false);
@@ -14,7 +15,9 @@ export default function TimerChallenge({ title, targetTime }) {
   function handleStart() {
     timer.current = setTimeout(() => {
       setTimerExpired(true);
-      dialog.current.showModal();
+      dialog.current.showModal(); // 5. Now, where the timer expired, we can use dialog ref, access current,
+      // and call showModal() to show the dialog. (Build in <dialog> method).
+      // 6. All the steps until now will not perform the desired action, so we will need to add a few more steps.
     }, targetTime * 1000);
 
     setTimerStarted(true);
@@ -26,6 +29,8 @@ export default function TimerChallenge({ title, targetTime }) {
 
   return (
     <>
+    {/* 2. We will add a prop named ref,
+    and Pass the dialog ref as a value to this ref prop to ResultModal cmp. */}
       <ResultModal ref={dialog} targetTime={targetTime} result="lost" />
       <section className="challenge">
         <h2>{title}</h2>

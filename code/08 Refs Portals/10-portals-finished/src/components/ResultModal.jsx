@@ -1,15 +1,17 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+// Here i destructured the props and added the remainingTime prop
 const ResultModal = forwardRef(function ResultModal(
   { targetTime, remainingTime, onReset },
   ref
 ) {
   const dialog = useRef();
 
+  // Using remainingTime to calculate a score and set the userLost variable
   const userLost = remainingTime <= 0;
-  const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
-  const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
+  const formattedRemainingTime = (remainingTime / 1000).toFixed(2); // Convert to seconds
+  const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100); // Calculate score
 
   useImperativeHandle(ref, () => {
     return {
@@ -21,6 +23,8 @@ const ResultModal = forwardRef(function ResultModal(
 
   return createPortal(
     <dialog ref={dialog} className="result-modal">
+
+    {/* Output message conditionally if userLost is true. */}
       {userLost && <h2>You lost</h2>}
       {!userLost && <h2>Your Score: {score}</h2>}
       <p>

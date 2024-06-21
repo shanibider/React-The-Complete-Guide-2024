@@ -3,6 +3,7 @@ import { forwardRef, useImperativeHandle, useRef } from 'react';
 const ResultModal = forwardRef(function ResultModal({ result, targetTime }, ref) {
   const dialog = useRef();
 
+  // Using this hook to defines functions that can be called from the parent component
   useImperativeHandle(ref, () => {
     return {
       open() {
