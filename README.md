@@ -2,7 +2,7 @@
 Welcome to my Git repository for **React - The Complete Guide!** <img height=20px src="https://skillicons.dev/icons?i=react"> 
 
 I completed a 68-hour Udemy course, 'React - The Complete Guide 2024' by Maximilian Schwarzmüller, which gave me a solid understanding and hands-on experience with `React` development. I learned about `components, props, React hooks, forms, Redux, routing, states and responses, and Next.js`. 🧾
-> 📎 Course Slides are attached in Resources folder.
+> 📎 Course Slides are attached in the Resources folder.
 
 ## 📌 Table of Content
 - [ ] Valuable React Resources
@@ -1545,31 +1545,322 @@ function App() {
 <img height="300px" src="https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/cffa9c00-1031-4baa-ba10-5947c45ab1e1">
 
 
+---
+
+
+
+
+### ◻ Coding Exercise 22 - Managing Other Values with Refs -
+```javascript
+/* Your working on a "Workout" app and your task is to start and stop timers when users click the
+"Start" and "Stop" buttons of a selected workout.
+
+You're provided with some code that already displays some workout items,
+therefore, you don't need to work on the JSX code or manage any state.
+
+Instead, your task is to set a timer if the "Start" button is clicked and
+clear (stop) that timer once the "Stop" button is clicked.
+
+If a timer expires, the same code that should execute if it's stopped manually
+(by pressing the "Stop" button) should be executed.
+
+The timer expiration time should be different for every workout - take a closer
+look at the Workout component to get access to that workout-specific time.
+
+You also must make sure that different Workout component instances set and manage separate,
+independent timers (i.e., when starting timers for "Pushups" and "Squats",
+clicking "Stop" for "Squats" should not stop the "Pushups" timer etc).
+
+When a timer expires, the same function that's triggered when the "Stop" button is pressed should be executed.*/
+
+import React from 'react';
+export default function Workout({ title, description, time, onComplete }) {
+  
+    // Create a ref to store the timer ID (for each workout), used to persist the timer ID across re-renders.
+  const timer = React.useRef();
+  
+  
+  function handleStartWorkout() {
+    // Todo: Start timer
+    // Set a timeout to call handleStopWorkout after the specified time.
+    // Then store it in timer.current ref.
+    // As a first argument a pointer is provided - since that's the function that should be executed whenever the workout is stopped or the timer is done. 
+    timer.current = setTimeout(handleStopWorkout, time);
+  }
+
+
+  function handleStopWorkout() {
+    // Todo: Stop timer
+    // Clear the timeout using the timer ID stored in timer.current.
+    // Call the onComplete function to mark the workout as completed.
+    clearTimeout(timer.current);
+    onComplete();
+  }
+
+  return (
+    <article className="workout">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <p>{time}</p>
+      <p>
+      {/*Implement start and stop timers when users click the "Start" and "Stop" buttons of a selected workout.*/}
+        <button onClick={handleStartWorkout}>Start</button>
+        <button onClick={handleStopWorkout}>Stop</button>
+      </p>
+    </article>
+  );
+}
+
+
+import React from 'react';
+import Workout from './Workout';
+
+const workouts = [
+  {
+    title: 'Pushups',
+    description: 'Do 30 pushups',
+    time: 1000 * 60 * 3,
+  },
+  {
+    title: 'Squats',
+    description: 'Do 30 squats',
+    time: 1000 * 60 * 2,
+  },
+  {
+    title: 'Pullups',
+    description: 'Do 10 pullups',
+    time: 1000 * 60 * 3,
+  },
+];
+
+function App() {   /*No need to change this file*/
+  const [completedWorkouts, setCompletedWorkouts] = React.useState([]);
+
+  // Updates the completedWorkouts state by adding the completed workout title to the array.
+  function handleWorkoutComplete(workoutTitle) {
+    setCompletedWorkouts((prevCompletedWorkouts) => [
+      ...prevCompletedWorkouts,
+      workoutTitle,
+    ]);
+  }
+  return (
+    <main>
+      <section>
+        <h2>Choose a workout</h2>
+        <ul>
+          {workouts.map((workout) => (
+            <li key={workout.title}>
+            {/* Spread the workout object to pass title, description, and time as props.
+            Pass the handleWorkoutComplete function to the Workout component. */}
+              <Workout
+                {...workout}
+                onComplete={() => handleWorkoutComplete(workout.title)}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Completed workouts</h2>
+        <ul>
+        {/* Map through completedWorkouts state and render a list item for each completed workout */}
+          {completedWorkouts.map((workoutTitle, index) => (
+            <li key={index}>{workoutTitle}</li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  );
+}
+export default App;
+
+// index.css:
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#180d27, #0c0219);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+section {
+  width: 90%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #6a887f;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #000000;
+}
+section h2 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #87efce;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #000000;
+  width: 20rem;
+}
+article h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+article p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+}
+article button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #054a35;
+  color: #ffffff;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+article button:hover {
+  background: #087f5b;
+}
+```
+![22](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/0444bffb-5048-45b2-a54f-30f5b5969b79)
 
 
 
 ---
 
 
-### ◻ Coding Exercise 22 - 
+
+
+
+
+
+### ◻ Coding Exercise 23 - Forwarding Refs -
+
 ```javascript
+/* Your task is to finish a custom Input component that was created by a colleague.
+
+The Input component must be highly configurable and meet the following requirements:
+
+It must accept a label prop which is used to set the text for the <label> element (i.e., between the <label> tags)
+
+It must accept all other attributes that could be added to <input> elements
+and set those props on the <input> element
+
+It must accept the special ref prop and connect the received ref to the <input> element
+
+This Input component can then be used in the App component. There, it's actually
+already being used and some props (the label and type props) are already set on the custom Input component.
+
+But in addition, your task also is to read the entered name and email values inside
+of the handleSaveData function with help of React's "ref" feature.
+
+To achieve this task, you must ensure that the custom Input component is able to
+receive the special ref prop and that this prop is then "connected" to the returned <input> element.
+
+Of course you also must add fitting refs to the App component and use them in
+handleSaveData to retrieve the actual entered input data.
+
+The read values must then be stored in the already-existing userData object.*/
+
+
 
 ```
 
-### ◻ Coding Exercise 23 - 
+---
+
+
+
+
+
+
+
+### ◻ Coding Exercise 24 - Exposing Component APIs -
 ```javascript
+Your working on a part of an application that contains a form which should
+be resettable from outside that form.
+
+A colleague prepared a Form component that contains a couple of dummy
+inputs and a "Save" button that's not doing anything.
+
+Your task is to expose a clear() function from inside that Form component so
+that other components that use the Form component can call that function to reset the form.
+
+Because that exposed clear() function should call the form's built-in reset()
+method (the JS form object, which is the underlying object of the <form> element,
+has a reset() method that does exactly what its name implies).
+So the Form component should be usable like this:
+function SomeComponent() {
+  const form = React.useRef();
+ 
+  function handleClear() {
+    form.current.clear();
+  }
+ 
+  return <Form ref={form}/>
+}
+After adding this feature to the Form component you should tweak the App component
+to establish a "connection" to the Form component and call the newly exposed clear()
+method from inside the App component's handleRestart() function.
+So you should add code similar to the above code snippet to the App component.
+
+
+
 
 ```
 
-### ◻ Coding Exercise 24 - 
+---
+
+
+
+
+### ◻ Coding Exercise 25 - Working with Portals -
 ```javascript
+/* A colleague asked you to finish work on a Toast component they worked on.
+That component should output a short info message upon certain page events - e.g.,
+once a user successfully enrolled into a course.
+
+To optimize the final DOM structure, the rendered content of the Toast component
+should be injected directly into the <body> element (which could be selected via document.querySelector('body')). It should NOT be rendered in the place where the
+<Toast /> component is used in the JSX code!
+
+For this task, the edited Toast component should then be displayed conditionally once a
+user clicked the Enrol button in the App component.
+
+After 3 seconds (set via setTimeout), the Toast component should be removed from the page again.*/
+
+
+
+
 
 ```
 
-### ◻ Coding Exercise 25 - 
-```javascript
+---
 
-```
+
+
 
 ### ◻ Coding Exercise 26 - 
 ```javascript
