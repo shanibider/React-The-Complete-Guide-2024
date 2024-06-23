@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
-import { createPortal } from 'react-dom';
+import { createPortal } from 'react-dom'; 
 
 // Here i destructured the props and added the remainingTime prop
 const ResultModal = forwardRef(function ResultModal(
@@ -21,6 +21,7 @@ const ResultModal = forwardRef(function ResultModal(
     };
   });
 
+  // createPortal render this jsx code to another place in the dom.
   return createPortal(
     <dialog ref={dialog} className="result-modal">
 
@@ -38,7 +39,8 @@ const ResultModal = forwardRef(function ResultModal(
         <button>Close</button>
       </form>
     </dialog>,
-    document.getElementById('modal')
+    document.getElementById('modal') // second argument; the target - html element that this code should be rendered to.
+    // Therefore we add a div with id="modal" to the index.html file.
   );
 });
 
