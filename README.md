@@ -1913,7 +1913,7 @@ body {
 
 ### ◻ Coding Exercise 24 - Exposing Component APIs -
 ```javascript
-Your working on a part of an application that contains a form which should
+/* Your working on a part of an application that contains a form which should
 be resettable from outside that form.
 
 A colleague prepared a Form component that contains a couple of dummy
@@ -1938,7 +1938,7 @@ function SomeComponent() {
 After adding this feature to the Form component you should tweak the App component
 to establish a "connection" to the Form component and call the newly exposed clear()
 method from inside the App component's handleRestart() function.
-So you should add code similar to the above code snippet to the App component.
+So you should add code similar to the above code snippet to the App component. */
 
 
 
@@ -1963,8 +1963,134 @@ should be injected directly into the <body> element (which could be selected via
 For this task, the edited Toast component should then be displayed conditionally once a
 user clicked the Enrol button in the App component.
 
-After 3 seconds (set via setTimeout), the Toast component should be removed from the page again.*/
+After 3 seconds (set via setTimeout), the Toast component should be removed from the page again. */
 
+import Toast from './Toast';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { useState, useRef } from 'react';
+
+function App() {    
+const timer = React.useRef();
+const [showToast, setShowToast] = React.useState(false);
+
+  function handleEnrol() {
+    // Todo: Show toast
+    setShowToast(true);
+
+    setTimeout(() => {
+      // Todo: hide toast
+        setShowToast(false);
+    }, 3000);
+  }
+
+  return (
+    <div id="app">
+      {/* Todo: Render <Toast /> component (conditionally) here */}
+      
+      {showToast && <Toast message="You have successfully enrolled!"/>}
+
+      <article>
+        <h2>React Course</h2>
+        <p>
+          A course that teaches you React from the ground up and in great depth!
+        </p>
+        <button onClick={handleEnrol}>Enrol</button>
+      </article>
+    </div>
+  );
+}
+export default App;
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export default function Toast({ message }) { 
+  return ReactDOM.createPortal(
+    <aside className="toast" data-testid="toast">
+      <p>{message}</p>
+    </aside>,
+       document.querySelector('body')
+  );
+}
+
+index.css:
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#180d27, #0c0219);
+  color: #e5d9f1;
+  min-height: 100vh;
+}
+#app {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 30rem;
+  text-align: center;
+  border-radius: 6px;
+  background: linear-gradient(#341a89, #3a1967);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #e5d9f1;
+  color: #341a89;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.toast {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  padding: 1rem;
+  border-radius: 4px;
+  background: rgba(118, 234, 189, 0.8);
+  color: black;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  animation: fade-slide-in-from-left 0.3s ease-out;
+}
+.toast p {
+  margin: 0;
+}
+@keyframes fade-slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  } 
+}
+```
+![portals](https://github.com/shanibider/React-The-Complete-Guide-2024/assets/72359805/d67eff23-ef8a-4f1e-b1f9-0567c3c69096)
+
+
+---
+
+
+
+
+
+
+
+
+
+### ◻ Coding Exercise 26 - 
+```javascript
 
 
 
@@ -1976,10 +2102,14 @@ After 3 seconds (set via setTimeout), the Toast component should be removed from
 
 
 
-### ◻ Coding Exercise 26 - 
-```javascript
 
-```
+
+
+
+
+
+
+
 
 ### ◻ Coding Exercise 27 - 
 ```javascript
